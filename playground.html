@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="المرجع الشامل لجداول HTML – من الأساسيات إلى الممارسات الحديثة. دليل عربي متكامل لعناصر وخصائص الجداول في HTML5." />
+  <meta name="keywords" content="HTML tables, جداول HTML, table, tr, td, th, colspan, rowspan, CSS tables" />
+  <title>📋 المرجع الشامل لجداول HTML</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     TOP HEADER
+══════════════════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-brand">
+    <div class="logo-box">📋</div>
+    <h1>جداول <span>HTML</span></h1>
+  </div>
+
+  <div class="header-pills">
+    <span class="pill pill-modern">مدعوم HTML5</span>
+    <span class="pill pill-legacy">قديم (Legacy)</span>
+    <span class="pill pill-dep">ملغى (Deprecated)</span>
+  </div>
+
+  <button id="nav-toggle" aria-label="قائمة التنقل" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════════════════ -->
+<div class="page-wrap">
+<nav id="sidebar" aria-label="قائمة الأقسام">
+
+  <div class="nav-section-title">الأساسيات</div>
+  <a class="nav-link" href="index.html#basics">
+    <span class="nav-icon">🔲</span> البنية الأساسية
+  </a>
+  <a class="nav-link" href="index.html#warnings">
+    <span class="nav-icon">⚠️</span> تحذيرات هيكلية
+    <span class="nav-badge badge-warn">مهم</span>
+  </a>
+  <a class="nav-link" href="index.html#spanning">
+    <span class="nav-icon">🔀</span> دمج الخلايا (Spanning)
+  </a>
+  <a class="nav-link" href="index.html#semantic">
+    <span class="nav-icon">🗂️</span> أقسام الجدول
+  </a>
+
+  <div class="nav-section-title">التنسيق</div>
+  <a class="nav-link" href="styling.html#alignment">
+    <span class="nav-icon">↔️</span> المحاذاة (Alignment)
+  </a>
+  <a class="nav-link" href="styling.html#spacing">
+    <span class="nav-icon">📐</span> المسافات والأبعاد
+  </a>
+  <a class="nav-link" href="styling.html#colgroup">
+    <span class="nav-icon">🧱</span> تجميع الأعمدة
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+  <a class="nav-link" href="styling.html#modern-ui">
+    <span class="nav-icon">✨</span> Modern UI
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+
+  <div class="nav-section-title">متقدم</div>
+  <a class="nav-link" href="advanced.html#nested">
+    <span class="nav-icon">🪆</span> الجداول المتداخلة
+  </a>
+  <a class="nav-link" href="advanced.html#accessibility">
+    <span class="nav-icon">♿</span> إمكانية الوصول (A11y)
+  </a>
+  <a class="nav-link" href="advanced.html#responsive">
+    <span class="nav-icon">📱</span> الجداول المتجاوبة
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+  <div class="nav-section-title">مرجع شامل</div>
+  <a class="nav-link" href="reference.html#legacy">
+    <span class="nav-icon">🏺</span> Legacy vs Modern
+    <span class="nav-badge badge-dep">Deprecated</span>
+  </a>
+  <a class="nav-link" href="reference.html#history">
+    <span class="nav-icon">⏳</span> السياق التاريخي
+  </a>
+  <a class="nav-link" href="reference.html#reference">
+    <span class="nav-icon">📖</span> جدول المرجع الشامل
+  </a>
+
+  <div class="nav-section-title">تفاعلي</div>
+  <a class="nav-link" href="playground.html#playground">
+    <span class="nav-icon">🎮</span> Playground تفاعلي
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════════════ -->
+<main id="main-content">
+<section class="section" id="playground">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">🎮</div>
+      <div class="section-title-wrap">
+        <h2>١٥. ملعب تفاعلي – Interactive Playground</h2>
+        <p>أنشئ جدولك الخاص وشاهد الكود المُولَّد والمعاينة المباشرة فوراً</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🔧 أداة بناء الجدول التفاعلية</h3>
+      <p>غيّر عدد الصفوف والأعمدة والخيارات أدناه وستُحدَّث المعاينة والكود تلقائياً.</p>
+    </div>
+
+    <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-bottom:20px;">
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:16px; margin-bottom:24px;">
+        <div>
+          <label style="display:block; font-size:0.78rem; color:var(--text-muted); margin-bottom:8px; font-weight:600;">عدد الصفوف</label>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button id="pg-rows-dec" style="width:30px;height:30px;background:var(--bg-card2);border:1px solid var(--border);color:var(--text);border-radius:4px;cursor:pointer;font-size:1.2rem;">−</button>
+            <span id="pg-rows-val" style="min-width:28px;text-align:center;font-weight:700;color:var(--cyan);font-size:1.1rem;">3</span>
+            <button id="pg-rows-inc" style="width:30px;height:30px;background:var(--bg-card2);border:1px solid var(--border);color:var(--text);border-radius:4px;cursor:pointer;font-size:1.2rem;">+</button>
+          </div>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.78rem; color:var(--text-muted); margin-bottom:8px; font-weight:600;">عدد الأعمدة</label>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button id="pg-cols-dec" style="width:30px;height:30px;background:var(--bg-card2);border:1px solid var(--border);color:var(--text);border-radius:4px;cursor:pointer;font-size:1.2rem;">−</button>
+            <span id="pg-cols-val" style="min-width:28px;text-align:center;font-weight:700;color:var(--cyan);font-size:1.1rem;">3</span>
+            <button id="pg-cols-inc" style="width:30px;height:30px;background:var(--bg-card2);border:1px solid var(--border);color:var(--text);border-radius:4px;cursor:pointer;font-size:1.2rem;">+</button>
+          </div>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.78rem; color:var(--text-muted); margin-bottom:8px; font-weight:600;">سُمك الإطار (border)</label>
+          <input id="pg-border" type="range" min="0" max="4" value="1" style="width:100%; accent-color:var(--cyan);">
+          <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-dim);margin-top:2px;"><span>0</span><span>4</span></div>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.78rem; color:var(--text-muted); margin-bottom:8px; font-weight:600;">الحشو (padding px)</label>
+          <input id="pg-padding" type="range" min="0" max="24" value="8" style="width:100%; accent-color:var(--cyan);">
+          <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-dim);margin-top:2px;"><span>0</span><span>24</span></div>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.78rem; color:var(--text-muted); margin-bottom:8px; font-weight:600;">خيارات</label>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);cursor:pointer;">
+              <input type="checkbox" id="pg-thead" checked style="accent-color:var(--cyan);"> رأس thead
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);cursor:pointer;">
+              <input type="checkbox" id="pg-zebra" style="accent-color:var(--cyan);"> Zebra striping
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);cursor:pointer;">
+              <input type="checkbox" id="pg-collapse" checked style="accent-color:var(--cyan);"> border-collapse
+            </label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);cursor:pointer;">
+              <input type="checkbox" id="pg-caption" style="accent-color:var(--cyan);"> caption
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;">📋 معاينة مباشرة</div>
+          <div id="pg-preview" style="background:#f8fafc; border-radius:8px; padding:20px; overflow-x:auto; min-height:120px; border:1px solid #e2e8f0;"></div>
+        </div>
+        <div style="position:relative;">
+          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;">💻 الكود المُولَّد</div>
+          <button id="pg-copy-btn"
+            style="position:absolute;top:0;left:0;background:var(--bg-card2);border:1px solid var(--border);color:var(--text-muted);font-size:0.7rem;padding:3px 9px;border-radius:4px;cursor:pointer;font-family:inherit;">نسخ</button>
+          <pre id="pg-code" style="background:var(--bg-code);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;overflow-x:auto;direction:ltr;text-align:left;font-family:'JetBrains Mono',monospace;font-size:0.75rem;line-height:1.6;min-height:120px;max-height:260px;margin:0;"></pre>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      📋 المرجع الشامل لجداول HTML •
+      ١٥ قسماً تعليمياً + جدول مرجع شامل •
+      مبني بالكامل بـ HTML5 + CSS3 + JavaScript
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim);">
+      استناداً إلى: <em>e.md</em> &nbsp;•&nbsp; <em>my.md</em> &nbsp;•&nbsp; <em>tables.html</em>
+      &nbsp;•&nbsp; جميع المصطلحات التقنية محتفظ بها بالإنجليزية للمرجعية الصحيحة.
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim); font-size:0.75rem;">
+      يشمل: الأساسيات • دمج الخلايا • الأقسام الدلالية • المحاذاة • المسافات • colgroup • Modern UI • Nested Tables • Accessibility • Legacy vs Modern • التاريخ • Responsive Tables • Interactive Playground • Cheat Sheet
+    </p>
+  </footer>
+
+</main>
+</div><!-- .page-wrap -->
+
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  aria-label="العودة للأعلى"
+  style="
+    position:fixed; bottom:28px; left:28px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--cyan); border:none; cursor:pointer;
+    display:none; align-items:center; justify-content:center;
+    font-size:1.2rem; box-shadow:0 4px 16px rgba(0,200,255,0.3);
+    transition:transform .2s;
+  ">↑</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

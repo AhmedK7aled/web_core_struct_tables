@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="المرجع الشامل لجداول HTML – من الأساسيات إلى الممارسات الحديثة. دليل عربي متكامل لعناصر وخصائص الجداول في HTML5." />
+  <meta name="keywords" content="HTML tables, جداول HTML, table, tr, td, th, colspan, rowspan, CSS tables" />
+  <title>📋 المرجع الشامل لجداول HTML</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     TOP HEADER
+══════════════════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-brand">
+    <div class="logo-box">📋</div>
+    <h1>جداول <span>HTML</span></h1>
+  </div>
+
+  <div class="header-pills">
+    <span class="pill pill-modern">مدعوم HTML5</span>
+    <span class="pill pill-legacy">قديم (Legacy)</span>
+    <span class="pill pill-dep">ملغى (Deprecated)</span>
+  </div>
+
+  <button id="nav-toggle" aria-label="قائمة التنقل" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════════════════ -->
+<div class="page-wrap">
+<nav id="sidebar" aria-label="قائمة الأقسام">
+
+  <div class="nav-section-title">الأساسيات</div>
+  <a class="nav-link" href="index.html#basics">
+    <span class="nav-icon">🔲</span> البنية الأساسية
+  </a>
+  <a class="nav-link" href="index.html#warnings">
+    <span class="nav-icon">⚠️</span> تحذيرات هيكلية
+    <span class="nav-badge badge-warn">مهم</span>
+  </a>
+  <a class="nav-link" href="index.html#spanning">
+    <span class="nav-icon">🔀</span> دمج الخلايا (Spanning)
+  </a>
+  <a class="nav-link" href="index.html#semantic">
+    <span class="nav-icon">🗂️</span> أقسام الجدول
+  </a>
+
+  <div class="nav-section-title">التنسيق</div>
+  <a class="nav-link" href="styling.html#alignment">
+    <span class="nav-icon">↔️</span> المحاذاة (Alignment)
+  </a>
+  <a class="nav-link" href="styling.html#spacing">
+    <span class="nav-icon">📐</span> المسافات والأبعاد
+  </a>
+  <a class="nav-link" href="styling.html#colgroup">
+    <span class="nav-icon">🧱</span> تجميع الأعمدة
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+  <a class="nav-link" href="styling.html#modern-ui">
+    <span class="nav-icon">✨</span> Modern UI
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+
+  <div class="nav-section-title">متقدم</div>
+  <a class="nav-link" href="advanced.html#nested">
+    <span class="nav-icon">🪆</span> الجداول المتداخلة
+  </a>
+  <a class="nav-link" href="advanced.html#accessibility">
+    <span class="nav-icon">♿</span> إمكانية الوصول (A11y)
+  </a>
+  <a class="nav-link" href="advanced.html#responsive">
+    <span class="nav-icon">📱</span> الجداول المتجاوبة
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+  <div class="nav-section-title">مرجع شامل</div>
+  <a class="nav-link" href="reference.html#legacy">
+    <span class="nav-icon">🏺</span> Legacy vs Modern
+    <span class="nav-badge badge-dep">Deprecated</span>
+  </a>
+  <a class="nav-link" href="reference.html#history">
+    <span class="nav-icon">⏳</span> السياق التاريخي
+  </a>
+  <a class="nav-link" href="reference.html#reference">
+    <span class="nav-icon">📖</span> جدول المرجع الشامل
+  </a>
+
+  <div class="nav-section-title">تفاعلي</div>
+  <a class="nav-link" href="playground.html#playground">
+    <span class="nav-icon">🎮</span> Playground تفاعلي
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════════════ -->
+<main id="main-content">
+<section class="section" id="nested">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🪆</div>
+      <div class="section-title-wrap">
+        <h2>٩. الجداول المتداخلة – Nested Tables</h2>
+        <p>جدول داخل خلية جدول – ممارسة تاريخية يُنصح بتجنبها اليوم</p>
+      </div>
+    </div>
+
+    <div class="alert alert-amber">
+      <span class="alert-icon">🏺</span>
+      <div>
+        <strong>السياق التاريخي:</strong>
+        في أواخر التسعينيات وبداية الألفية الثالثة، كان المطورون يستخدمون الجداول المتداخلة لبناء تخطيطات الصفحات الكاملة. اليوم، يُستبدل هذا الأسلوب كلياً بـ CSS Flexbox وCSS Grid. الجداول المتداخلة <strong>لا تزال صالحة</strong> لأغراض عرض البيانات الحقيقية فقط.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📦 متى تستخدم الجداول المتداخلة؟</h3>
+      <ul>
+        <li>✅ عرض بيانات معقدة ومتعددة المستويات (مثل جدول بيانات مضمّنة داخل خلية).</li>
+        <li>✅ قوالب الإيميل HTML التي لا تدعم Flexbox بالكامل.</li>
+        <li>❌ تصميم تخطيط الصفحة (استخدم CSS Grid/Flexbox).</li>
+        <li>❌ أي غرض آخر غير عرض بيانات فعلية.</li>
+      </ul>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+        <span>جدول متداخل – مثال</span>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td&gt;</span><span class="tx">خلية خارجية</span><span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;td&gt;</span>
+      <span class="cm">&lt;!-- جدول مستقل بالكامل داخل هذه الخلية --&gt;</span>
+      <span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+          <span class="kw">&lt;td&gt;</span><span class="tx">أ</span><span class="kw">&lt;/td&gt;</span>
+          <span class="kw">&lt;td&gt;</span><span class="tx">ب</span><span class="kw">&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+        <span class="kw">&lt;tr&gt;</span>
+          <span class="kw">&lt;td&gt;</span><span class="tx">ج</span><span class="kw">&lt;/td&gt;</span>
+          <span class="kw">&lt;td&gt;</span><span class="tx">د</span><span class="kw">&lt;/td&gt;</span>
+        <span class="kw">&lt;/tr&gt;</span>
+      <span class="kw">&lt;/table&gt;</span>
+    <span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-box-label">🔍 جدول متداخل مرئياً</div>
+      <table border="2" cellpadding="10" style="color:#1a1a2e; border-color:#4a8ab5;">
+        <tr>
+          <td class="outer-td" style="font-weight:700;">خلية خارجية</td>
+          <td class="outer-td">
+            <table border="1" class="" style="width:100%;">
+              <tr>
+                <td class="inner-table" style="border:1px solid #7aa8c5; padding:6px 10px; background:#fff; color:#1a1a2e; font-size:0.82rem;">خلية متداخلة أ</td>
+                <td style="border:1px solid #7aa8c5; padding:6px 10px; background:#fff; color:#1a1a2e; font-size:0.82rem;">خلية متداخلة ب</td>
+              </tr>
+              <tr>
+                <td style="border:1px solid #7aa8c5; padding:6px 10px; background:#fff; color:#1a1a2e; font-size:0.82rem;">خلية متداخلة ج</td>
+                <td style="border:1px solid #7aa8c5; padding:6px 10px; background:#fff; color:#1a1a2e; font-size:0.82rem;">خلية متداخلة د</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="accessibility">
+    <div class="section-header">
+      <div class="section-icon icon-green">♿</div>
+      <div class="section-title-wrap">
+        <h2>١٠. إمكانية الوصول – Accessibility (A11y)</h2>
+        <p>جعل الجداول مفهومة لقارئات الشاشة ومستخدمي لوحة المفاتيح</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>🔖 خاصية scope</h3>
+        <p>تُضاف على <code>&lt;th&gt;</code> لإخبار قارئ الشاشة بإيجاه العنوان:</p>
+        <br/>
+        <ul>
+          <li><code>scope="col"</code> — هذا العنوان يصف <strong>عمود</strong> (رأسياً).</li>
+          <li><code>scope="row"</code> — هذا العنوان يصف <strong>صف</strong> (أفقياً).</li>
+          <li><code>scope="colgroup"</code> — يصف مجموعة أعمدة.</li>
+          <li><code>scope="rowgroup"</code> — يصف مجموعة صفوف.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📝 &lt;caption&gt;</h3>
+        <p>
+          يُعطي عنواناً مرئياً للجدول ويُقرأه قارئ الشاشة قبل محتوى الجدول.
+          يُوضع مباشرة داخل <code>&lt;table&gt;</code> كأول عنصر.
+          يُغني عن خاصية <code>summary</code> الملغاة في HTML5.
+        </p>
+        <br/>
+        <div class="alert alert-red" style="margin:0; font-size:0.82rem;">
+          <span class="alert-icon">🚫</span>
+          <div><strong>summary ملغى في HTML5.</strong> استخدم <code>&lt;caption&gt;</code> بدلاً منه.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 كيف تضرّ الجداول السيئة بمستخدمي قارئات الشاشة؟</h3>
+      <ul>
+        <li>بدون <code>scope</code>، لا يعرف قارئ الشاشة أي عنوان يتبع أي خلية في جداول البيانات المعقدة.</li>
+        <li>الجداول المستخدمة للتخطيط تُشوّش تسلسل القراءة المنطقي، مما يُربك المستخدمين المكفوفين تماماً.</li>
+        <li>غياب <code>&lt;caption&gt;</code> يعني أن المستخدم لا يعرف ما يصفه الجدول قبل الدخول فيه.</li>
+      </ul>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+        <span>جدول متوافق بالكامل مع معايير A11y</span>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+<pre><span class="kw">&lt;table&gt;</span>
+  <span class="kw">&lt;caption&gt;</span><span class="tx">بيانات الطلاب – الفصل الأول</span><span class="kw">&lt;/caption&gt;</span>
+
+  <span class="kw">&lt;thead&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;th</span> <span class="at">scope</span>=<span class="vl">"col"</span><span class="kw">&gt;</span><span class="tx">الاسم</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th</span> <span class="at">scope</span>=<span class="vl">"col"</span><span class="kw">&gt;</span><span class="tx">الدرجة</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th</span> <span class="at">scope</span>=<span class="vl">"col"</span><span class="kw">&gt;</span><span class="tx">التقدير</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/thead&gt;</span>
+
+  <span class="kw">&lt;tbody&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;th</span> <span class="at">scope</span>=<span class="vl">"row"</span><span class="kw">&gt;</span><span class="tx">أحمد محمد</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">90</span><span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">ممتاز</span><span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/tbody&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="responsive">
+    <div class="section-header">
+      <div class="section-icon icon-green">📱</div>
+      <div class="section-title-wrap">
+        <h2>١٤. الجداول المتجاوبة – Responsive Tables</h2>
+        <p>جعل الجداول تعمل بشكل صحيح على الشاشات الصغيرة والهواتف</p>
+      </div>
+    </div>
+
+    <div class="alert alert-amber">
+      <span class="alert-icon">📱</span>
+      <div>
+        <strong>مشكلة الجداول على الهواتف:</strong>
+        الجداول ذات الأعمدة الكثيرة تتجاوز عرض الشاشة على الهواتف وتسبب تمريراً أفقياً مزعجاً.
+        الحل الأساسي هو لف الجدول داخل حاوية قابلة للتمرير أو إعادة هيكلة العرض بـ CSS.
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>🔧 الحل الأساسي – Overflow Wrapper</h3>
+        <p>أبسط حل وأكثرها شيوعاً: لف الجدول في <code>&lt;div&gt;</code> مع <code>overflow-x: auto</code>. هذا يُتيح التمرير الأفقي فقط داخل حاوية الجدول دون كسر تخطيط باقي الصفحة.</p>
+        <br/>
+        <div class="alert alert-cyan" style="margin:0; font-size:0.82rem;">
+          <span class="alert-icon">💡</span>
+          <div>أضف <code>min-width</code> على الجدول نفسه لضمان ظهور كل الأعمدة بشكل صحيح بدون تشويه.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>🎯 table-layout: fixed مع overflow</h3>
+        <p>مجموعة خصائص CSS الثلاث الأساسية لجدول متجاوب احترافي:</p>
+        <br/>
+        <ul>
+          <li><code>overflow-x: auto</code> على الحاوية — تمرير أفقي فقط عند الحاجة</li>
+          <li><code>table-layout: fixed</code> على الجدول — أعمدة ثابتة العرض لا تتغير بالمحتوى</li>
+          <li><code>text-overflow: ellipsis</code> على الخلايا — اقتطاع النصوص الطويلة بنقاط</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-panel old-panel">
+        <h4>❌ بدون تجاوب – ينكسر على الهاتف</h4>
+        <div class="code-wrap" style="margin:0">
+<pre style="border-radius:6px; font-size:0.77rem;"><span class="cm">&lt;!-- لا حاوية – يتجاوز الشاشة --&gt;</span>
+<span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;th&gt;</span><span class="tx">عمود 1</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span><span class="tx">عمود 2</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span><span class="tx">عمود 3</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span><span class="tx">عمود 4</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;th&gt;</span><span class="tx">عمود 5</span><span class="kw">&lt;/th&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+        </div>
+      </div>
+      <div class="compare-panel new-panel">
+        <h4>✅ مع تجاوب – يعمل على كل الشاشات</h4>
+        <div class="code-wrap" style="margin:0">
+<pre style="border-radius:6px; font-size:0.77rem;"><span class="cm">&lt;!-- حاوية مع overflow --&gt;</span>
+<span class="kw">&lt;div</span> <span class="at">style</span>=<span class="vl">"overflow-x:auto;"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;table</span> <span class="at">style</span>=<span class="vl">"min-width:500px;"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">عمود 1</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">عمود 2</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">عمود 3</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">عمود 4</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">عمود 5</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/table&gt;</span>
+<span class="kw">&lt;/div&gt;</span></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+        <span>CSS – نظام الجدول المتجاوب الكامل</span>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+<pre><span class="cm">/* الحاوية – تتيح التمرير الأفقي عند الحاجة */</span>
+<span class="cs">.table-wrapper</span> &#123;
+  <span class="cs">overflow-x</span>: <span class="cv">auto</span>;
+  <span class="cs">-webkit-overflow-scrolling</span>: <span class="cv">touch</span>; <span class="cm">/* سلاسة على iOS */</span>
+  <span class="cs">border-radius</span>: <span class="cv">8px</span>;
+  <span class="cs">border</span>: <span class="cv">1px solid #e2e8f0</span>;
+&#125;
+
+<span class="cs">.responsive-table</span> &#123;
+  <span class="cs">width</span>: <span class="cv">100%</span>;
+  <span class="cs">min-width</span>: <span class="cv">600px</span>; <span class="cm">/* يمنع الجدول من الانضغاط */</span>
+  <span class="cs">border-collapse</span>: <span class="cv">collapse</span>;
+  <span class="cs">table-layout</span>: <span class="cv">fixed</span>;
+&#125;
+
+<span class="cs">.responsive-table td,</span>
+<span class="cs">.responsive-table th</span> &#123;
+  <span class="cs">padding</span>: <span class="cv">12px 16px</span>;
+  <span class="cs">text-align</span>: <span class="cv">right</span>;
+  <span class="cs">white-space</span>: <span class="cv">nowrap</span>; <span class="cm">/* يمنع كسر الخلايا */</span>
+  <span class="cs">overflow</span>: <span class="cv">hidden</span>;
+  <span class="cs">text-overflow</span>: <span class="cv">ellipsis</span>; <span class="cm">/* ... عند الاقتطاع */</span>
+&#125;
+
+<span class="cm">/* على الشاشات الصغيرة – إخفاء أعمدة غير ضرورية */</span>
+<span class="cs">@media (max-width: 480px)</span> &#123;
+  <span class="cs">.hide-mobile</span> &#123; <span class="cs">display</span>: <span class="cv">none</span>; &#125;
+&#125;</pre>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-box-label">🔍 جدول متجاوب مع تمرير أفقي</div>
+      <div style="overflow-x:auto; border:1px solid #cbd5e1; border-radius:8px;">
+        <table style="width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed;">
+          <thead>
+            <tr style="background:#1a3a5c; color:#00c8ff;">
+              <th style="padding:11px 14px; text-align:right; width:160px;">اسم الطالب</th>
+              <th style="padding:11px 14px; text-align:right; width:130px;">المادة</th>
+              <th style="padding:11px 14px; text-align:center; width:90px;">الدرجة</th>
+              <th style="padding:11px 14px; text-align:center; width:100px;">النسبة %</th>
+              <th style="padding:11px 14px; text-align:center; width:110px;">الحالة</th>
+              <th style="padding:11px 14px; text-align:right; width:150px;">تاريخ الامتحان</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e;">أحمد محمد علي</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e;">قواعد البيانات</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e; text-align:center;">92</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e; text-align:center;">92%</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; text-align:center; color:#16a34a; font-weight:700;">ممتاز</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e;">2025/01/15</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#f8fafc; color:#1a1a2e;">سارة خالد حسن</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#f8fafc; color:#1a1a2e;">شبكات الحاسوب</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#f8fafc; color:#1a1a2e; text-align:center;">78</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#f8fafc; color:#1a1a2e; text-align:center;">78%</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#f8fafc; text-align:center; color:#d97706; font-weight:700;">جيد جداً</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#f8fafc; color:#1a1a2e;">2025/01/16</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e;">محمد يوسف إبراهيم</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e;">خوارزميات</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e; text-align:center;">65</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e; text-align:center;">65%</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; text-align:center; color:#e74c3c; font-weight:700;">مقبول</td>
+              <td style="padding:10px 14px; border-bottom:1px solid #e2e8f0; background:#fff; color:#1a1a2e;">2025/01/17</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.78rem; color:#888; margin-top:10px; text-align:center;">↔️ يمكنك التمرير أفقياً لرؤية كل الأعمدة على الشاشات الصغيرة</p>
+    </div>
+
+  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      📋 المرجع الشامل لجداول HTML •
+      ١٥ قسماً تعليمياً + جدول مرجع شامل •
+      مبني بالكامل بـ HTML5 + CSS3 + JavaScript
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim);">
+      استناداً إلى: <em>e.md</em> &nbsp;•&nbsp; <em>my.md</em> &nbsp;•&nbsp; <em>tables.html</em>
+      &nbsp;•&nbsp; جميع المصطلحات التقنية محتفظ بها بالإنجليزية للمرجعية الصحيحة.
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim); font-size:0.75rem;">
+      يشمل: الأساسيات • دمج الخلايا • الأقسام الدلالية • المحاذاة • المسافات • colgroup • Modern UI • Nested Tables • Accessibility • Legacy vs Modern • التاريخ • Responsive Tables • Interactive Playground • Cheat Sheet
+    </p>
+  </footer>
+
+</main>
+</div><!-- .page-wrap -->
+
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  aria-label="العودة للأعلى"
+  style="
+    position:fixed; bottom:28px; left:28px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--cyan); border:none; cursor:pointer;
+    display:none; align-items:center; justify-content:center;
+    font-size:1.2rem; box-shadow:0 4px 16px rgba(0,200,255,0.3);
+    transition:transform .2s;
+  ">↑</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

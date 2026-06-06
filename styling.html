@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="المرجع الشامل لجداول HTML – من الأساسيات إلى الممارسات الحديثة. دليل عربي متكامل لعناصر وخصائص الجداول في HTML5." />
+  <meta name="keywords" content="HTML tables, جداول HTML, table, tr, td, th, colspan, rowspan, CSS tables" />
+  <title>📋 المرجع الشامل لجداول HTML</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     TOP HEADER
+══════════════════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-brand">
+    <div class="logo-box">📋</div>
+    <h1>جداول <span>HTML</span></h1>
+  </div>
+
+  <div class="header-pills">
+    <span class="pill pill-modern">مدعوم HTML5</span>
+    <span class="pill pill-legacy">قديم (Legacy)</span>
+    <span class="pill pill-dep">ملغى (Deprecated)</span>
+  </div>
+
+  <button id="nav-toggle" aria-label="قائمة التنقل" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════════════════ -->
+<div class="page-wrap">
+<nav id="sidebar" aria-label="قائمة الأقسام">
+
+  <div class="nav-section-title">الأساسيات</div>
+  <a class="nav-link" href="index.html#basics">
+    <span class="nav-icon">🔲</span> البنية الأساسية
+  </a>
+  <a class="nav-link" href="index.html#warnings">
+    <span class="nav-icon">⚠️</span> تحذيرات هيكلية
+    <span class="nav-badge badge-warn">مهم</span>
+  </a>
+  <a class="nav-link" href="index.html#spanning">
+    <span class="nav-icon">🔀</span> دمج الخلايا (Spanning)
+  </a>
+  <a class="nav-link" href="index.html#semantic">
+    <span class="nav-icon">🗂️</span> أقسام الجدول
+  </a>
+
+  <div class="nav-section-title">التنسيق</div>
+  <a class="nav-link" href="styling.html#alignment">
+    <span class="nav-icon">↔️</span> المحاذاة (Alignment)
+  </a>
+  <a class="nav-link" href="styling.html#spacing">
+    <span class="nav-icon">📐</span> المسافات والأبعاد
+  </a>
+  <a class="nav-link" href="styling.html#colgroup">
+    <span class="nav-icon">🧱</span> تجميع الأعمدة
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+  <a class="nav-link" href="styling.html#modern-ui">
+    <span class="nav-icon">✨</span> Modern UI
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+
+  <div class="nav-section-title">متقدم</div>
+  <a class="nav-link" href="advanced.html#nested">
+    <span class="nav-icon">🪆</span> الجداول المتداخلة
+  </a>
+  <a class="nav-link" href="advanced.html#accessibility">
+    <span class="nav-icon">♿</span> إمكانية الوصول (A11y)
+  </a>
+  <a class="nav-link" href="advanced.html#responsive">
+    <span class="nav-icon">📱</span> الجداول المتجاوبة
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+  <div class="nav-section-title">مرجع شامل</div>
+  <a class="nav-link" href="reference.html#legacy">
+    <span class="nav-icon">🏺</span> Legacy vs Modern
+    <span class="nav-badge badge-dep">Deprecated</span>
+  </a>
+  <a class="nav-link" href="reference.html#history">
+    <span class="nav-icon">⏳</span> السياق التاريخي
+  </a>
+  <a class="nav-link" href="reference.html#reference">
+    <span class="nav-icon">📖</span> جدول المرجع الشامل
+  </a>
+
+  <div class="nav-section-title">تفاعلي</div>
+  <a class="nav-link" href="playground.html#playground">
+    <span class="nav-icon">🎮</span> Playground تفاعلي
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════════════ -->
+<main id="main-content">
+<section class="section" id="alignment">
+    <div class="section-header">
+      <div class="section-icon icon-amber">↔️</div>
+      <div class="section-title-wrap">
+        <h2>٥. محاذاة محتوى الخلايا</h2>
+        <p>align وvalign القديمتين مقابل CSS الحديث</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>↔️ المحاذاة الأفقية (Horizontal)</h3>
+        <p><strong>قديماً:</strong> <code>align="left|center|right"</code> على الخلية مباشرة.</p>
+        <br/>
+        <p><strong>حديثاً (CSS):</strong> <code>text-align: left | center | right;</code></p>
+        <br/>
+        <div class="alert alert-amber" style="margin:0; font-size:0.82rem;">
+          <span class="alert-icon">📧</span>
+          <div>خاصية <code>align</code> القديمة لا تزال مستخدمة في قوالب الإيميل HTML بسبب محدودية دعم CSS فيها.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>↕️ المحاذاة العمودية (Vertical)</h3>
+        <p><strong>قديماً:</strong> <code>valign="top|middle|bottom"</code> على الخلية مباشرة.</p>
+        <br/>
+        <p><strong>حديثاً (CSS):</strong> <code>vertical-align: top | middle | bottom;</code></p>
+        <br/>
+        <div class="alert alert-cyan" style="margin:0; font-size:0.82rem;">
+          <span class="alert-icon">💡</span>
+          <div><code>&lt;td&gt;</code> افتراضياً: يسار أفقياً + وسط عمودياً. <code>&lt;th&gt;</code> افتراضياً: وسط أفقياً + وسط عمودياً.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-panel old-panel">
+        <h4>🏺 الطريقة القديمة (Legacy HTML)</h4>
+<pre style="border-radius:6px; font-size:0.78rem; margin-top:8px;"><span class="kw">&lt;td</span> <span class="at">align</span>=<span class="vl">"right"</span>
+    <span class="at">valign</span>=<span class="vl">"top"</span>
+    <span class="at">height</span>=<span class="vl">"80"</span><span class="kw">&gt;</span>
+  <span class="tx">أعلى اليمين</span>
+<span class="kw">&lt;/td&gt;</span></pre>
+      </div>
+      <div class="compare-panel new-panel">
+        <h4>✅ الطريقة الحديثة (CSS)</h4>
+<pre style="border-radius:6px; font-size:0.78rem; margin-top:8px;"><span class="kw">&lt;td</span> <span class="at">style</span>=<span class="vl">"
+  text-align: right;
+  vertical-align: top;
+  height: 80px;"</span><span class="kw">&gt;</span>
+  <span class="tx">أعلى اليمين</span>
+<span class="kw">&lt;/td&gt;</span></pre>
+      </div>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-box-label">🔍 كل اتجاهات المحاذاة مرئياً</div>
+      <table border="1" class="align-demo" style="margin:0 auto; text-align:unset;">
+        <tr>
+          <td style="text-align:right; vertical-align:top;">أعلى اليمين<br/>(top-right)</td>
+          <td style="text-align:center; vertical-align:top;">أعلى الوسط<br/>(top-center)</td>
+          <td style="text-align:left; vertical-align:top;">أعلى اليسار<br/>(top-left)</td>
+        </tr>
+        <tr>
+          <td style="text-align:right; vertical-align:middle;">وسط اليمين<br/>(middle-right)</td>
+          <td style="text-align:center; vertical-align:middle;">الوسط<br/>(middle)</td>
+          <td style="text-align:left; vertical-align:middle;">وسط اليسار<br/>(middle-left)</td>
+        </tr>
+        <tr>
+          <td style="text-align:right; vertical-align:bottom;">أسفل اليمين<br/>(bottom-right)</td>
+          <td style="text-align:center; vertical-align:bottom;">أسفل الوسط<br/>(bottom-center)</td>
+          <td style="text-align:left; vertical-align:bottom;">أسفل اليسار<br/>(bottom-left)</td>
+        </tr>
+      </table>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="spacing">
+    <div class="section-header">
+      <div class="section-icon icon-amber">📐</div>
+      <div class="section-title-wrap">
+        <h2>٦. المسافات والأبعاد</h2>
+        <p>cellpadding, cellspacing, width, height – قديماً وحديثاً</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📏 الفرق بين cellpadding وcellspacing</h3>
+      <ul>
+        <li>
+          <strong>cellpadding</strong> — الحشو الداخلي: المسافة <em>داخل</em> الخلية بين المحتوى وحدودها.
+          كمثل الـ padding في CSS. قديماً: <code>&lt;table cellpadding="10"&gt;</code>. 
+          حديثاً: <code>td, th &#123; padding: 10px; &#125;</code>
+        </li>
+        <br/>
+        <li>
+          <strong>cellspacing</strong> — المسافة الخارجية: المسافة <em>بين</em> الخلايا وبعضها البعض.
+          قديماً: <code>&lt;table cellspacing="5"&gt;</code>.
+          حديثاً: <code>table &#123; border-spacing: 5px; &#125;</code>
+        </li>
+        <br/>
+        <li>
+          <strong>border-collapse: collapse</strong> — لإزالة المسافات بين الخلايا كلياً ودمج الحدود في خط واحد.
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📦 width &amp; height – التحكم في الأبعاد</h3>
+      <p>
+        الجداول بطبيعتها مرنة (Flexible) وتتكيف مع حجم المحتوى تلقائياً، مما يجعل السيطرة عليها صعبة.
+        لإجبار الجدول على أبعاد محددة:
+      </p>
+      <br/>
+      <ul>
+        <li>تحديد عرض الخلية <code>width</code> يُطبَّق على <strong>العمود بأكمله</strong>.</li>
+        <li>تحديد ارتفاع الخلية <code>height</code> يُطبَّق على <strong>الصف بأكمله</strong>.</li>
+        <li>لضبط دقيق لعرض الأعمدة استخدم <code>table-layout: fixed</code> مع <code>width</code> على <code>&lt;col&gt;</code> أو <code>&lt;th&gt;</code>.</li>
+      </ul>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-panel old-panel">
+        <h4>🏺 الطريقة القديمة</h4>
+<pre style="border-radius:6px; font-size:0.77rem; margin-top:8px;"><span class="kw">&lt;table</span> <span class="at">cellpadding</span>=<span class="vl">"10"</span>
+       <span class="at">cellspacing</span>=<span class="vl">"5"</span>
+       <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;tr&gt;</span>
+    <span class="kw">&lt;td</span> <span class="at">width</span>=<span class="vl">"200"</span>
+        <span class="at">height</span>=<span class="vl">"50"</span><span class="kw">&gt;</span>
+      <span class="tx">بيانات</span>
+    <span class="kw">&lt;/td&gt;</span>
+  <span class="kw">&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+      </div>
+      <div class="compare-panel new-panel">
+        <h4>✅ الطريقة الحديثة (CSS)</h4>
+<pre style="border-radius:6px; font-size:0.77rem; margin-top:8px;"><span class="cs">table</span> &#123;
+  <span class="cs">border-spacing</span>: <span class="cv">5px</span>;
+  <span class="cs">border-collapse</span>: <span class="cv">separate</span>;
+&#125;
+<span class="cs">td, th</span> &#123;
+  <span class="cs">padding</span>: <span class="cv">10px</span>;
+  <span class="cs">width</span>: <span class="cv">200px</span>;
+  <span class="cs">height</span>: <span class="cv">50px</span>;
+  <span class="cs">border</span>: <span class="cv">1px solid #ccc</span>;
+&#125;</pre>
+      </div>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-box-label">🔍 مقارنة cellspacing=0 مقابل cellspacing=8</div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
+        <div style="text-align:center;">
+          <p style="font-size:0.8rem; color:#555; margin-bottom:8px;">cellspacing=0 (ملتصق)</p>
+          <table border="1" cellpadding="8" cellspacing="0" style="color:#1a1a2e;">
+            <tr><td>أ</td><td>ب</td><td>ج</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td></tr>
+          </table>
+        </div>
+        <div style="text-align:center;">
+          <p style="font-size:0.8rem; color:#555; margin-bottom:8px;">cellspacing=10 (متباعد)</p>
+          <table border="1" cellpadding="8" cellspacing="10" style="color:#1a1a2e;">
+            <tr><td>أ</td><td>ب</td><td>ج</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td></tr>
+          </table>
+        </div>
+        <div style="text-align:center;">
+          <p style="font-size:0.8rem; color:#555; margin-bottom:8px;">border-collapse: collapse</p>
+          <table style="border-collapse:collapse; color:#1a1a2e;">
+            <tr><td style="border:1px solid #999; padding:8px;">أ</td><td style="border:1px solid #999; padding:8px;">ب</td><td style="border:1px solid #999; padding:8px;">ج</td></tr>
+            <tr><td style="border:1px solid #999; padding:8px;">1</td><td style="border:1px solid #999; padding:8px;">2</td><td style="border:1px solid #999; padding:8px;">3</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="colgroup">
+    <div class="section-header">
+      <div class="section-icon icon-green">🧱</div>
+      <div class="section-title-wrap">
+        <h2>٧. تجميع وتنسيق الأعمدة – &lt;colgroup&gt; &amp; &lt;col&gt;</h2>
+        <p>تنسيق أعمدة بأكملها بدلاً من تكرار الـ style على كل خلية</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 لماذا colgroup؟</h3>
+      <p>
+        بدلاً من تكرار كتابة <code>class="highlight-col"</code> على كل <code>&lt;td&gt;</code> في عمود كامل،
+        يمكنك استخدام <code>&lt;colgroup&gt;</code> و<code>&lt;col&gt;</code> لتنسيق العمود مرة واحدة فقط.
+        يجب وضع هذا الوسم مباشرة بعد فتح <code>&lt;table&gt;</code> (أو بعد <code>&lt;caption&gt;</code> إن وجد).
+      </p>
+      <br/>
+      <p>خاصية <code>span</code> تتيح لـ <code>&lt;col&gt;</code> واحد تطبيق تنسيقه على عدة أعمدة متتالية معاً.</p>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-label">
+        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+        <span>colgroup + col + span</span>
+      </div>
+      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;colgroup&gt;</span>
+    <span class="cm">&lt;!-- العمود الأول – خلفية صفراء --&gt;</span>
+    <span class="kw">&lt;col</span> <span class="at">style</span>=<span class="vl">"background-color: #fef08a; width: 120px;"</span><span class="kw">&gt;</span>
+    <span class="cm">&lt;!-- العمودان التاليان – خلفية خضراء فاتحة --&gt;</span>
+    <span class="kw">&lt;col</span> <span class="at">span</span>=<span class="vl">"2"</span> <span class="at">style</span>=<span class="vl">"background-color: #bbf7d0;"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;/colgroup&gt;</span>
+  <span class="kw">&lt;thead&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">المنتج</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">الربع 1</span><span class="kw">&lt;/th&gt;</span>
+      <span class="kw">&lt;th&gt;</span><span class="tx">الربع 2</span><span class="kw">&lt;/th&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/thead&gt;</span>
+  <span class="kw">&lt;tbody&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">تفاح</span><span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">50</span><span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">60</span><span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+    <span class="kw">&lt;tr&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">موز</span><span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">30</span><span class="kw">&lt;/td&gt;</span>
+      <span class="kw">&lt;td&gt;</span><span class="tx">45</span><span class="kw">&lt;/td&gt;</span>
+    <span class="kw">&lt;/tr&gt;</span>
+  <span class="kw">&lt;/tbody&gt;</span>
+<span class="kw">&lt;/table&gt;</span></pre>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-box-label">🔍 النتيجة المرئية</div>
+      <table border="1" cellpadding="9" class="colgroup-demo" style="width:100%; max-width:380px;">
+        <colgroup>
+          <col style="background:#fef08a; width:120px;">
+          <col span="2" style="background:#bbf7d0;">
+        </colgroup>
+        <thead>
+          <tr><th>المنتج</th><th>الربع 1</th><th>الربع 2</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>تفاح</td><td>50</td><td>60</td></tr>
+          <tr><td>موز</td><td>30</td><td>45</td></tr>
+          <tr><td>برتقال</td><td>70</td><td>55</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="modern-ui">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">✨</div>
+      <div class="section-title-wrap">
+        <h2>٨. Modern UI – تحسينات واجهة المستخدم</h2>
+        <p>table-layout: fixed, zebra striping, hover effects, sticky header</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎨 تقنيات الجداول الاحترافية</h3>
+      <ul>
+        <li>
+          <strong>table-layout: fixed</strong> — تُجبر الجدول على احترام عرض الأعمدة المحدد بدقة، متجاهلةً طول المحتوى. ضروري للجداول ذات الأعمدة المحددة العرض.
+        </li>
+        <li>
+          <strong>Zebra Striping (تلوين متبادل)</strong> — تلوين صف وترك صف لتسهيل تتبع البيانات. يُستخدم CSS: <code>tbody tr:nth-child(even) &#123; background: #f8fafc; &#125;</code>
+        </li>
+        <li>
+          <strong>Hover Effect</strong> — إضاءة الصف عند مرور المؤشر لتحسين تجربة المستخدم: <code>tr:hover &#123; background: #e2e8f0; &#125;</code>
+        </li>
+        <li>
+          <strong>Sticky Header</strong> — تثبيت رأس الجدول أثناء التمرير: <code>thead th &#123; position: sticky; top: 0; &#125;</code>
+        </li>
+      </ul>
+    </div>
+
+    <div class="two-col">
+      <div class="code-wrap">
+        <div class="code-label">
+          <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span>CSS – نمط الجدول الاحترافي</span>
+        </div>
+        <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+<pre><span class="cs">.modern-table</span> &#123;
+  <span class="cs">width</span>: <span class="cv">100%</span>;
+  <span class="cs">border-collapse</span>: <span class="cv">collapse</span>;
+  <span class="cs">table-layout</span>: <span class="cv">fixed</span>;
+  <span class="cs">border-radius</span>: <span class="cv">8px</span>;
+  <span class="cs">overflow</span>: <span class="cv">hidden</span>;
+&#125;
+
+<span class="cs">.modern-table thead th</span> &#123;
+  <span class="cs">background</span>: <span class="cv">#1a3a5c</span>;
+  <span class="cs">color</span>: <span class="cv">#00c8ff</span>;
+  <span class="cs">padding</span>: <span class="cv">12px</span>;
+  <span class="cs">position</span>: <span class="cv">sticky</span>;
+  <span class="cs">top</span>: <span class="cv">0</span>;
+&#125;
+
+<span class="cs">.modern-table tbody tr:nth-child(even)</span> &#123;
+  <span class="cs">background</span>: <span class="cv">#f0f5fa</span>;
+&#125;
+
+<span class="cs">.modern-table tbody tr:hover</span> &#123;
+  <span class="cs">background</span>: <span class="cv">#d4e5f5</span>;
+  <span class="cs">transition</span>: <span class="cv">background .15s</span>;
+&#125;</pre>
+      </div>
+      <div>
+        <div class="demo-box" style="margin-bottom:0; height:100%;">
+          <div class="demo-box-label">🔍 الجدول الاحترافي مباشرة</div>
+          <table class="modern-demo-table">
+            <thead>
+              <tr><th>الطالب</th><th>المادة</th><th>الدرجة</th><th>الحالة</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>أحمد</td><td>شبكات</td><td>92</td><td style="color:#2a9d5c; font-weight:700;">ممتاز</td></tr>
+              <tr><td>سارة</td><td>قواعد البيانات</td><td>78</td><td style="color:#f0a500; font-weight:700;">جيد</td></tr>
+              <tr><td>خالد</td><td>خوارزميات</td><td>85</td><td style="color:#2a9d5c; font-weight:700;">جيد جداً</td></tr>
+              <tr><td>ريم</td><td>برمجة الويب</td><td>95</td><td style="color:#2a9d5c; font-weight:700;">ممتاز</td></tr>
+              <tr><td>فارس</td><td>أنظمة تشغيل</td><td>61</td><td style="color:#e74c3c; font-weight:700;">مقبول</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      📋 المرجع الشامل لجداول HTML •
+      ١٥ قسماً تعليمياً + جدول مرجع شامل •
+      مبني بالكامل بـ HTML5 + CSS3 + JavaScript
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim);">
+      استناداً إلى: <em>e.md</em> &nbsp;•&nbsp; <em>my.md</em> &nbsp;•&nbsp; <em>tables.html</em>
+      &nbsp;•&nbsp; جميع المصطلحات التقنية محتفظ بها بالإنجليزية للمرجعية الصحيحة.
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim); font-size:0.75rem;">
+      يشمل: الأساسيات • دمج الخلايا • الأقسام الدلالية • المحاذاة • المسافات • colgroup • Modern UI • Nested Tables • Accessibility • Legacy vs Modern • التاريخ • Responsive Tables • Interactive Playground • Cheat Sheet
+    </p>
+  </footer>
+
+</main>
+</div><!-- .page-wrap -->
+
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  aria-label="العودة للأعلى"
+  style="
+    position:fixed; bottom:28px; left:28px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--cyan); border:none; cursor:pointer;
+    display:none; align-items:center; justify-content:center;
+    font-size:1.2rem; box-shadow:0 4px 16px rgba(0,200,255,0.3);
+    transition:transform .2s;
+  ">↑</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

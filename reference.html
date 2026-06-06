@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="المرجع الشامل لجداول HTML – من الأساسيات إلى الممارسات الحديثة. دليل عربي متكامل لعناصر وخصائص الجداول في HTML5." />
+  <meta name="keywords" content="HTML tables, جداول HTML, table, tr, td, th, colspan, rowspan, CSS tables" />
+  <title>📋 المرجع الشامل لجداول HTML</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     TOP HEADER
+══════════════════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-brand">
+    <div class="logo-box">📋</div>
+    <h1>جداول <span>HTML</span></h1>
+  </div>
+
+  <div class="header-pills">
+    <span class="pill pill-modern">مدعوم HTML5</span>
+    <span class="pill pill-legacy">قديم (Legacy)</span>
+    <span class="pill pill-dep">ملغى (Deprecated)</span>
+  </div>
+
+  <button id="nav-toggle" aria-label="قائمة التنقل" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     SIDEBAR
+══════════════════════════════════════════════════════ -->
+<div class="page-wrap">
+<nav id="sidebar" aria-label="قائمة الأقسام">
+
+  <div class="nav-section-title">الأساسيات</div>
+  <a class="nav-link" href="index.html#basics">
+    <span class="nav-icon">🔲</span> البنية الأساسية
+  </a>
+  <a class="nav-link" href="index.html#warnings">
+    <span class="nav-icon">⚠️</span> تحذيرات هيكلية
+    <span class="nav-badge badge-warn">مهم</span>
+  </a>
+  <a class="nav-link" href="index.html#spanning">
+    <span class="nav-icon">🔀</span> دمج الخلايا (Spanning)
+  </a>
+  <a class="nav-link" href="index.html#semantic">
+    <span class="nav-icon">🗂️</span> أقسام الجدول
+  </a>
+
+  <div class="nav-section-title">التنسيق</div>
+  <a class="nav-link" href="styling.html#alignment">
+    <span class="nav-icon">↔️</span> المحاذاة (Alignment)
+  </a>
+  <a class="nav-link" href="styling.html#spacing">
+    <span class="nav-icon">📐</span> المسافات والأبعاد
+  </a>
+  <a class="nav-link" href="styling.html#colgroup">
+    <span class="nav-icon">🧱</span> تجميع الأعمدة
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+  <a class="nav-link" href="styling.html#modern-ui">
+    <span class="nav-icon">✨</span> Modern UI
+    <span class="nav-badge badge-new">CSS</span>
+  </a>
+
+  <div class="nav-section-title">متقدم</div>
+  <a class="nav-link" href="advanced.html#nested">
+    <span class="nav-icon">🪆</span> الجداول المتداخلة
+  </a>
+  <a class="nav-link" href="advanced.html#accessibility">
+    <span class="nav-icon">♿</span> إمكانية الوصول (A11y)
+  </a>
+  <a class="nav-link" href="advanced.html#responsive">
+    <span class="nav-icon">📱</span> الجداول المتجاوبة
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+  <div class="nav-section-title">مرجع شامل</div>
+  <a class="nav-link" href="reference.html#legacy">
+    <span class="nav-icon">🏺</span> Legacy vs Modern
+    <span class="nav-badge badge-dep">Deprecated</span>
+  </a>
+  <a class="nav-link" href="reference.html#history">
+    <span class="nav-icon">⏳</span> السياق التاريخي
+  </a>
+  <a class="nav-link" href="reference.html#reference">
+    <span class="nav-icon">📖</span> جدول المرجع الشامل
+  </a>
+
+  <div class="nav-section-title">تفاعلي</div>
+  <a class="nav-link" href="playground.html#playground">
+    <span class="nav-icon">🎮</span> Playground تفاعلي
+    <span class="nav-badge badge-new">جديد</span>
+  </a>
+
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN CONTENT
+══════════════════════════════════════════════════════ -->
+<main id="main-content">
+<section class="section" id="legacy">
+    <div class="section-header">
+      <div class="section-icon icon-amber">🏺</div>
+      <div class="section-title-wrap">
+        <h2>١١. Legacy vs Modern – المقارنة الشاملة</h2>
+        <p>كل خاصية قديمة ومقابلها الحديث في CSS</p>
+      </div>
+    </div>
+
+    <div class="alert alert-amber">
+      <span class="alert-icon">📌</span>
+      <div>
+        <strong>الخصائص الملغاة لا تزال تعمل في المتصفحات</strong>، لكنها ليست جزءاً من معيار HTML5 الرسمي.
+        استخدامها في مشاريع جديدة يُعتبر ممارسة سيئة ويُصعّب الصيانة. الاستثناء الوحيد: قوالب الإيميل HTML.
+      </div>
+    </div>
+
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>الخاصية القديمة (Legacy)</th>
+            <th>يُكتب على</th>
+            <th>الوظيفة</th>
+            <th>البديل الحديث (CSS)</th>
+            <th>HTML5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>align="left|center|right"</code></td>
+            <td><code>&lt;td&gt;, &lt;th&gt;, &lt;tr&gt;</code></td>
+            <td>محاذاة أفقية للمحتوى</td>
+            <td><code>text-align: left|center|right;</code></td>
+            <td><span class="tag-sup sup-dep">ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>valign="top|middle|bottom"</code></td>
+            <td><code>&lt;td&gt;, &lt;th&gt;, &lt;tr&gt;</code></td>
+            <td>محاذاة عمودية للمحتوى</td>
+            <td><code>vertical-align: top|middle|bottom;</code></td>
+            <td><span class="tag-sup sup-dep">ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>cellpadding="N"</code></td>
+            <td><code>&lt;table&gt;</code></td>
+            <td>الحشو الداخلي للخلايا</td>
+            <td><code>td, th &#123; padding: Npx; &#125;</code></td>
+            <td><span class="tag-sup sup-dep">ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>cellspacing="N"</code></td>
+            <td><code>&lt;table&gt;</code></td>
+            <td>المسافة بين الخلايا</td>
+            <td><code>table &#123; border-spacing: Npx; &#125;</code></td>
+            <td><span class="tag-sup sup-dep">ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>border="N"</code></td>
+            <td><code>&lt;table&gt;</code></td>
+            <td>سمك الإطار</td>
+            <td><code>td, th &#123; border: 1px solid #ccc; &#125;</code></td>
+            <td><span class="tag-sup sup-leg">قديم</span></td>
+          </tr>
+          <tr>
+            <td><code>bgcolor="color"</code></td>
+            <td><code>&lt;table&gt;, &lt;td&gt;</code></td>
+            <td>لون الخلفية</td>
+            <td><code>background-color: color;</code></td>
+            <td><span class="tag-sup sup-dep">ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>width="N"</code></td>
+            <td><code>&lt;table&gt;, &lt;td&gt;</code></td>
+            <td>تحديد العرض</td>
+            <td><code>width: Npx;</code> + <code>table-layout: fixed</code></td>
+            <td><span class="tag-sup sup-leg">قديم</span></td>
+          </tr>
+          <tr>
+            <td><code>height="N"</code></td>
+            <td><code>&lt;td&gt;, &lt;tr&gt;</code></td>
+            <td>تحديد الارتفاع</td>
+            <td><code>height: Npx;</code></td>
+            <td><span class="tag-sup sup-leg">قديم</span></td>
+          </tr>
+          <tr>
+            <td><code>summary="text"</code></td>
+            <td><code>&lt;table&gt;</code></td>
+            <td>وصف للشاشة (A11y)</td>
+            <td><code>&lt;caption&gt;</code> أو <code>aria-describedby</code></td>
+            <td><span class="tag-sup sup-dep">ملغى</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="history">
+    <div class="section-header">
+      <div class="section-icon icon-purple">⏳</div>
+      <div class="section-title-wrap">
+        <h2>١٢. السياق التاريخي لجداول HTML</h2>
+        <p>من أداة عرض البيانات إلى أداة تخطيط الصفحات... وعودة</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1993 – HTML الأولى</div>
+        <div class="tl-text">
+          أُضيف وسم <code>&lt;table&gt;</code> في إحدى مسودات HTML لعرض البيانات العلمية والإحصائية فقط،
+          وهو الغرض الأصلي الصحيح له.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1995 – 2000: عصر التخطيط بالجداول</div>
+        <div class="tl-text">
+          مع صعود شعبية الويب وضعف دعم المتصفحات لـ CSS، اكتشف المطورون أن الجداول يمكنها إنشاء تخطيطات متعددة الأعمدة.
+          أصبحت الجداول المتداخلة الطريقة الوحيدة المتاحة لبناء صفحات ذات تصميم معقد. كانت الصفحات تحتوي على عشرات الجداول المتداخلة!
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2000 – 2007: ثورة CSS</div>
+        <div class="tl-text">
+          مع تحسن دعم CSS في المتصفحات، بدأت حركة "CSS-based layouts" (Jeffrey Zeldman).
+          تخلّى المطورون تدريجياً عن الجداول لصالح <code>float</code> وتخطيطات CSS النقية.
+          أصبح استخدام الجداول للتخطيط يُعدّ ممارسة سيئة رسمياً.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2009 – 2015: CSS3 وFlexbox</div>
+        <div class="tl-text">
+          CSS3 Flexbox أنهى أي مبرر لاستخدام الجداول في التخطيط. HTML5 ألغى رسمياً معظم خصائص الجداول التنسيقية.
+          الجداول عادت إلى دورها الأصلي: عرض البيانات فقط.
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2020 – حتى اليوم</div>
+        <div class="tl-text">
+          CSS Grid وFlexbox هما المعيار الكامل للتخطيط. الجداول تُستخدم فقط للبيانات المجدولة.
+          الاستثناء الوحيد المقبول لاستخدام جداول للتخطيط: قوالب الإيميل HTML، التي لا تزال محدودة دعم CSS.
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <hr class="divider" />
+
+<section class="section" id="reference">
+    <div class="section-header">
+      <div class="section-icon icon-cyan">📖</div>
+      <div class="section-title-wrap">
+        <h2>١٦. جدول المرجع الشامل – Cheat Sheet</h2>
+        <p>كل عناصر وخصائص HTML Tables في مكان واحد</p>
+      </div>
+    </div>
+
+    <div class="ref-table-wrap">
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>العنصر / الخاصية</th>
+            <th>يُكتب على</th>
+            <th>الوصف</th>
+            <th>HTML5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;table&gt;</code></td>
+            <td>—</td>
+            <td>الحاوية الرئيسية للجدول. كل شيء يقع داخلها.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;tr&gt;</code></td>
+            <td>داخل table أو thead أو tbody أو tfoot</td>
+            <td>يُعرّف صفاً أفقياً واحداً.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;td&gt;</code></td>
+            <td>داخل tr</td>
+            <td>خلية بيانات عادية. الافتراضي: محاذاة يسار + وسط عمودي.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;th&gt;</code></td>
+            <td>داخل tr</td>
+            <td>خلية عنوان. الافتراضي: خط عريض + محاذاة وسط.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;thead&gt;</code></td>
+            <td>داخل table</td>
+            <td>قسم رأس الجدول. يحتوي عادةً على صف أو أكثر من th.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;tbody&gt;</code></td>
+            <td>داخل table</td>
+            <td>جسم الجدول. يمكن تعدده لتقسيم البيانات.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;tfoot&gt;</code></td>
+            <td>داخل table</td>
+            <td>تذييل الجدول. للمجاميع والملخصات. يُكتب آخراً في HTML5.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;caption&gt;</code></td>
+            <td>أول عنصر داخل table</td>
+            <td>عنوان مرئي للجدول. مهم جداً لإمكانية الوصول (A11y).</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;colgroup&gt;</code></td>
+            <td>بعد table مباشرة</td>
+            <td>حاوية لتجميع وتنسيق الأعمدة.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>&lt;col&gt;</code></td>
+            <td>داخل colgroup</td>
+            <td>يُعرّف عموداً أو مجموعة أعمدة (عبر span) لتنسيقها.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>colspan="N"</code></td>
+            <td>td, th</td>
+            <td>يدمج الخلية أفقياً لتحتل مساحة N عمود. احذف N−1 خلية من نفس الصف.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>rowspan="N"</code></td>
+            <td>td, th</td>
+            <td>يدمج الخلية عمودياً لتمتد على N صف. احذف N−1 خلية من الصفوف التالية.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>scope="col|row|..."</code></td>
+            <td>th</td>
+            <td>يحدد اتجاه العنوان لقارئات الشاشة. مهم جداً لـ A11y.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم – A11y</span></td>
+          </tr>
+          <tr>
+            <td><code>span="N"</code></td>
+            <td>col</td>
+            <td>يُطبّق تنسيق col الواحد على N عمود متتالية.</td>
+            <td><span class="tag-sup sup-ok">✅ مدعوم</span></td>
+          </tr>
+          <tr>
+            <td><code>cellpadding="N"</code></td>
+            <td>table</td>
+            <td>الحشو الداخلي للخلايا. ← CSS: <code>padding: Npx</code> على td</td>
+            <td><span class="tag-sup sup-dep">❌ ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>cellspacing="N"</code></td>
+            <td>table</td>
+            <td>المسافة بين الخلايا. ← CSS: <code>border-spacing: Npx</code> على table</td>
+            <td><span class="tag-sup sup-dep">❌ ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>align="..."</code></td>
+            <td>td, th, tr</td>
+            <td>محاذاة أفقية. ← CSS: <code>text-align</code></td>
+            <td><span class="tag-sup sup-dep">❌ ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>valign="..."</code></td>
+            <td>td, th, tr</td>
+            <td>محاذاة عمودية. ← CSS: <code>vertical-align</code></td>
+            <td><span class="tag-sup sup-dep">❌ ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>bgcolor="..."</code></td>
+            <td>table, td</td>
+            <td>لون الخلفية. ← CSS: <code>background-color</code></td>
+            <td><span class="tag-sup sup-dep">❌ ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>summary="..."</code></td>
+            <td>table</td>
+            <td>وصف للجدول لقارئ الشاشة. ← استخدم <code>&lt;caption&gt;</code></td>
+            <td><span class="tag-sup sup-dep">❌ ملغى</span></td>
+          </tr>
+          <tr>
+            <td><code>border="N"</code></td>
+            <td>table</td>
+            <td>سمك الإطار. ← CSS: <code>border</code> + <code>border-collapse</code></td>
+            <td><span class="tag-sup sup-leg">⚠️ قديم</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Legend -->
+    <div class="card" style="margin-top:16px;">
+      <h3>📌 دليل الأيقونات</h3>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; font-size:0.85rem;">
+        <span><span class="tag-sup sup-ok">✅ مدعوم</span> — خاصية أو وسم رسمي ومدعوم في HTML5</span>
+        <span><span class="tag-sup sup-leg">⚠️ قديم</span> — لا يزال يعمل لكن غير موصى به</span>
+        <span><span class="tag-sup sup-dep">❌ ملغى</span> — خُذف من معيار HTML5؛ استخدم بديل CSS</span>
+      </div>
+    </div>
+
+  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      📋 المرجع الشامل لجداول HTML •
+      ١٥ قسماً تعليمياً + جدول مرجع شامل •
+      مبني بالكامل بـ HTML5 + CSS3 + JavaScript
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim);">
+      استناداً إلى: <em>e.md</em> &nbsp;•&nbsp; <em>my.md</em> &nbsp;•&nbsp; <em>tables.html</em>
+      &nbsp;•&nbsp; جميع المصطلحات التقنية محتفظ بها بالإنجليزية للمرجعية الصحيحة.
+    </p>
+    <p style="margin-top:6px; color:var(--text-dim); font-size:0.75rem;">
+      يشمل: الأساسيات • دمج الخلايا • الأقسام الدلالية • المحاذاة • المسافات • colgroup • Modern UI • Nested Tables • Accessibility • Legacy vs Modern • التاريخ • Responsive Tables • Interactive Playground • Cheat Sheet
+    </p>
+  </footer>
+
+</main>
+</div><!-- .page-wrap -->
+
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  aria-label="العودة للأعلى"
+  style="
+    position:fixed; bottom:28px; left:28px; z-index:999;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--cyan); border:none; cursor:pointer;
+    display:none; align-items:center; justify-content:center;
+    font-size:1.2rem; box-shadow:0 4px 16px rgba(0,200,255,0.3);
+    transition:transform .2s;
+  ">↑</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
