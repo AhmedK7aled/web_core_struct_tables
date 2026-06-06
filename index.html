@@ -1,189 +1,194 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="المرجع الشامل لجداول HTML – من الأساسيات إلى الممارسات الحديثة. دليل عربي متكامل لعناصر وخصائص الجداول في HTML5." />
+  <meta name="description"
+    content="المرجع الشامل لجداول HTML – من الأساسيات إلى الممارسات الحديثة. دليل عربي متكامل لعناصر وخصائص الجداول في HTML5." />
   <meta name="keywords" content="HTML tables, جداول HTML, table, tr, td, th, colspan, rowspan, CSS tables" />
-  <title>📋 المرجع الشامل لجداول HTML</title>
+  <title>HTML</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<div id="progress-bar"></div>
+  <div id="progress-bar"></div>
 
-<!-- ══════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
      TOP HEADER
 ══════════════════════════════════════════════════════ -->
-<header id="site-header">
-  <div class="header-brand">
-    <div class="logo-box">📋</div>
-    <h1>جداول <span>HTML</span></h1>
-  </div>
+  <header id="site-header">
+    <div class="header-brand">
+      <div class="logo-box">📋</div>
+      <h1>جداول <span>HTML</span></h1>
+    </div>
 
-  <div class="header-pills">
-    <span class="pill pill-modern">مدعوم HTML5</span>
-    <span class="pill pill-legacy">قديم (Legacy)</span>
-    <span class="pill pill-dep">ملغى (Deprecated)</span>
-  </div>
+    <div class="header-pills">
+      <span class="pill pill-modern">مدعوم HTML5</span>
+      <span class="pill pill-legacy">قديم (Legacy)</span>
+      <span class="pill pill-dep">ملغى (Deprecated)</span>
+    </div>
 
-  <button id="nav-toggle" aria-label="قائمة التنقل" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </button>
-</header>
+    <button id="nav-toggle" aria-label="قائمة التنقل" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-<!-- ══════════════════════════════════════════════════════
+  <!-- ══════════════════════════════════════════════════════
      SIDEBAR
 ══════════════════════════════════════════════════════ -->
-<div class="page-wrap">
-<nav id="sidebar" aria-label="قائمة الأقسام">
+  <div class="page-wrap">
+    <nav id="sidebar" aria-label="قائمة الأقسام">
 
-  <div class="nav-section-title">الأساسيات</div>
-  <a class="nav-link" href="index.html#basics">
-    <span class="nav-icon">🔲</span> البنية الأساسية
-  </a>
-  <a class="nav-link" href="index.html#warnings">
-    <span class="nav-icon">⚠️</span> تحذيرات هيكلية
-    <span class="nav-badge badge-warn">مهم</span>
-  </a>
-  <a class="nav-link" href="index.html#spanning">
-    <span class="nav-icon">🔀</span> دمج الخلايا (Spanning)
-  </a>
-  <a class="nav-link" href="index.html#semantic">
-    <span class="nav-icon">🗂️</span> أقسام الجدول
-  </a>
+      <div class="nav-section-title">الأساسيات</div>
+      <a class="nav-link" href="index.html#basics">
+        <span class="nav-icon">🔲</span> البنية الأساسية
+      </a>
+      <a class="nav-link" href="index.html#warnings">
+        <span class="nav-icon">⚠️</span> تحذيرات هيكلية
+        <span class="nav-badge badge-warn">مهم</span>
+      </a>
+      <a class="nav-link" href="index.html#spanning">
+        <span class="nav-icon">🔀</span> دمج الخلايا (Spanning)
+      </a>
+      <a class="nav-link" href="index.html#semantic">
+        <span class="nav-icon">🗂️</span> أقسام الجدول
+      </a>
 
-  <div class="nav-section-title">التنسيق</div>
-  <a class="nav-link" href="styling.html#alignment">
-    <span class="nav-icon">↔️</span> المحاذاة (Alignment)
-  </a>
-  <a class="nav-link" href="styling.html#spacing">
-    <span class="nav-icon">📐</span> المسافات والأبعاد
-  </a>
-  <a class="nav-link" href="styling.html#colgroup">
-    <span class="nav-icon">🧱</span> تجميع الأعمدة
-    <span class="nav-badge badge-new">CSS</span>
-  </a>
-  <a class="nav-link" href="styling.html#modern-ui">
-    <span class="nav-icon">✨</span> Modern UI
-    <span class="nav-badge badge-new">CSS</span>
-  </a>
+      <div class="nav-section-title">التنسيق</div>
+      <a class="nav-link" href="styling.html#alignment">
+        <span class="nav-icon">↔️</span> المحاذاة (Alignment)
+      </a>
+      <a class="nav-link" href="styling.html#spacing">
+        <span class="nav-icon">📐</span> المسافات والأبعاد
+      </a>
+      <a class="nav-link" href="styling.html#colgroup">
+        <span class="nav-icon">🧱</span> تجميع الأعمدة
+        <span class="nav-badge badge-new">CSS</span>
+      </a>
+      <a class="nav-link" href="styling.html#modern-ui">
+        <span class="nav-icon">✨</span> Modern UI
+        <span class="nav-badge badge-new">CSS</span>
+      </a>
 
-  <div class="nav-section-title">متقدم</div>
-  <a class="nav-link" href="advanced.html#nested">
-    <span class="nav-icon">🪆</span> الجداول المتداخلة
-  </a>
-  <a class="nav-link" href="advanced.html#accessibility">
-    <span class="nav-icon">♿</span> إمكانية الوصول (A11y)
-  </a>
-  <a class="nav-link" href="advanced.html#responsive">
-    <span class="nav-icon">📱</span> الجداول المتجاوبة
-    <span class="nav-badge badge-new">جديد</span>
-  </a>
+      <div class="nav-section-title">متقدم</div>
+      <a class="nav-link" href="advanced.html#nested">
+        <span class="nav-icon">🪆</span> الجداول المتداخلة
+      </a>
+      <a class="nav-link" href="advanced.html#accessibility">
+        <span class="nav-icon">♿</span> إمكانية الوصول (A11y)
+      </a>
+      <a class="nav-link" href="advanced.html#responsive">
+        <span class="nav-icon">📱</span> الجداول المتجاوبة
+        <span class="nav-badge badge-new">جديد</span>
+      </a>
 
-  <div class="nav-section-title">مرجع شامل</div>
-  <a class="nav-link" href="reference.html#legacy">
-    <span class="nav-icon">🏺</span> Legacy vs Modern
-    <span class="nav-badge badge-dep">Deprecated</span>
-  </a>
-  <a class="nav-link" href="reference.html#history">
-    <span class="nav-icon">⏳</span> السياق التاريخي
-  </a>
-  <a class="nav-link" href="reference.html#reference">
-    <span class="nav-icon">📖</span> جدول المرجع الشامل
-  </a>
+      <div class="nav-section-title">مرجع شامل</div>
+      <a class="nav-link" href="reference.html#legacy">
+        <span class="nav-icon">🏺</span> Legacy vs Modern
+        <span class="nav-badge badge-dep">Deprecated</span>
+      </a>
+      <a class="nav-link" href="reference.html#history">
+        <span class="nav-icon">⏳</span> السياق التاريخي
+      </a>
+      <a class="nav-link" href="reference.html#reference">
+        <span class="nav-icon">📖</span> جدول المرجع الشامل
+      </a>
 
-  <div class="nav-section-title">تفاعلي</div>
-  <a class="nav-link" href="playground.html#playground">
-    <span class="nav-icon">🎮</span> Playground تفاعلي
-    <span class="nav-badge badge-new">جديد</span>
-  </a>
+      <div class="nav-section-title">تفاعلي</div>
+      <a class="nav-link" href="playground.html#playground">
+        <span class="nav-icon">🎮</span> Playground تفاعلي
+        <span class="nav-badge badge-new">جديد</span>
+      </a>
 
-</nav>
+    </nav>
 
-<!-- ══════════════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════════════
      MAIN CONTENT
 ══════════════════════════════════════════════════════ -->
-<main id="main-content">
-<!-- ── HERO ── -->
-  <div class="page-hero">
-    <div class="hero-tag">📋 المرجع الشامل</div>
-    <h2>جداول HTML من الألف إلى الياء</h2>
-    <p>
-      دليل عربي متكامل يشمل البنية الأساسية، دمج الخلايا، أقسام الجدول،
-      محاذاة المحتوى، الخصائص القديمة والحديثة، وأفضل الممارسات لكل مطور ويب.
-    </p>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="num">13</span><span class="lbl">قسماً تعليمياً</span></div>
-      <div class="hero-stat"><span class="num">40+</span><span class="lbl">مثال تفاعلي</span></div>
-      <div class="hero-stat"><span class="num">20+</span><span class="lbl">خاصية موثقة</span></div>
-      <div class="hero-stat"><span class="num">100%</span><span class="lbl">بالعربية</span></div>
-    </div>
-  </div>
-
-  <!-- TOC Mini -->
-  <div class="toc-mini">
-    <h3>📑 جدول المحتويات السريع</h3>
-    <ol>
-      <li><a href="index.html#basics">البنية الأساسية – &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;</a></li>
-      <li><a href="index.html#warnings">تحذيرات هيكلية حرجة</a></li>
-      <li><a href="index.html#spanning">دمج الخلايا – colspan &amp; rowspan</a></li>
-      <li><a href="index.html#semantic">أقسام الجدول – thead, tbody, tfoot, caption</a></li>
-      <li><a href="styling.html#alignment">محاذاة المحتوى – align &amp; valign</a></li>
-      <li><a href="styling.html#spacing">المسافات والأبعاد – cellpadding, cellspacing, width, height</a></li>
-      <li><a href="styling.html#colgroup">تجميع وتنسيق الأعمدة – colgroup &amp; col</a></li>
-      <li><a href="styling.html#modern-ui">Modern UI – table-layout: fixed, zebra striping, hover</a></li>
-      <li><a href="advanced.html#nested">الجداول المتداخلة – Nested Tables</a></li>
-      <li><a href="advanced.html#accessibility">إمكانية الوصول – scope, caption, ARIA</a></li>
-      <li><a href="reference.html#legacy">Legacy vs Modern – مقارنة شاملة</a></li>
-      <li><a href="reference.html#history">السياق التاريخي</a></li>
-      <li><a href="advanced.html#responsive">الجداول المتجاوبة – Responsive Tables</a></li>
-      <li><a href="playground.html#playground">ملعب تفاعلي – Interactive Playground</a></li>
-      <li><a href="reference.html#reference">جدول المرجع الشامل – Cheat Sheet</a></li>
-    </ol>
-  </div>
-
-  <section class="section" id="basics">
-    <div class="section-header">
-      <div class="section-icon icon-cyan">🔲</div>
-      <div class="section-title-wrap">
-        <h2>١. البنية الأساسية للجدول</h2>
-        <p>العناصر الأربعة التي يقوم عليها كل جدول في HTML</p>
+    <main id="main-content">
+      <!-- ── HERO ── -->
+      <div class="page-hero">
+        <div class="hero-tag">📋 المرجع الشامل</div>
+        <h2>جداول HTML من الألف إلى الياء</h2>
+        <p>
+          دليل عربي متكامل يشمل البنية الأساسية، دمج الخلايا، أقسام الجدول،
+          محاذاة المحتوى، الخصائص القديمة والحديثة، وأفضل الممارسات لكل مطور ويب.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">13</span><span class="lbl">قسماً تعليمياً</span></div>
+          <div class="hero-stat"><span class="num">40+</span><span class="lbl">مثال تفاعلي</span></div>
+          <div class="hero-stat"><span class="num">20+</span><span class="lbl">خاصية موثقة</span></div>
+          <div class="hero-stat"><span class="num">100%</span><span class="lbl">بالعربية</span></div>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <h3>🧩 العناصر الأربعة الأساسية</h3>
-      <p>تُستخدم جداول HTML لعرض <strong>البيانات المجدولة</strong> (Tabular Data) باستخدام الصفوف والأعمدة. يعتمد الهيكل على أربعة وسوم جوهرية:</p>
-      <br/>
-      <ul>
-        <li><code>&lt;table&gt;</code> — الحاوية الرئيسية التي تضمّ كل شيء.</li>
-        <li><code>&lt;tr&gt;</code> (Table Row) — يُعرّف صفاً أفقياً واحداً.</li>
-        <li><code>&lt;td&gt;</code> (Table Data) — يُعرّف خلية بيانات عادية.</li>
-        <li><code>&lt;th&gt;</code> (Table Header) — خلية عنوان، تظهر بخط عريض ومتوسطة أفقياً تلقائياً.</li>
-      </ul>
-      <br/>
-      <div class="alert alert-cyan">
-        <span class="alert-icon">💡</span>
-        <div><strong>لا يوجد وسم للعمود!</strong> الأعمدة تتشكّل تلقائياً بناءً على عدد خلايا <code>&lt;td&gt;</code> أو <code>&lt;th&gt;</code> داخل كل صف <code>&lt;tr&gt;</code>. كلما أضفت خلايا في كل صف، كلما زاد عدد الأعمدة.</div>
+      <!-- TOC Mini -->
+      <div class="toc-mini">
+        <h3>📑 جدول المحتويات السريع</h3>
+        <ol>
+          <li><a href="index.html#basics">البنية الأساسية – &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;</a></li>
+          <li><a href="index.html#warnings">تحذيرات هيكلية حرجة</a></li>
+          <li><a href="index.html#spanning">دمج الخلايا – colspan &amp; rowspan</a></li>
+          <li><a href="index.html#semantic">أقسام الجدول – thead, tbody, tfoot, caption</a></li>
+          <li><a href="styling.html#alignment">محاذاة المحتوى – align &amp; valign</a></li>
+          <li><a href="styling.html#spacing">المسافات والأبعاد – cellpadding, cellspacing, width, height</a></li>
+          <li><a href="styling.html#colgroup">تجميع وتنسيق الأعمدة – colgroup &amp; col</a></li>
+          <li><a href="styling.html#modern-ui">Modern UI – table-layout: fixed, zebra striping, hover</a></li>
+          <li><a href="advanced.html#nested">الجداول المتداخلة – Nested Tables</a></li>
+          <li><a href="advanced.html#accessibility">إمكانية الوصول – scope, caption, ARIA</a></li>
+          <li><a href="reference.html#legacy">Legacy vs Modern – مقارنة شاملة</a></li>
+          <li><a href="reference.html#history">السياق التاريخي</a></li>
+          <li><a href="advanced.html#responsive">الجداول المتجاوبة – Responsive Tables</a></li>
+          <li><a href="playground.html#playground">ملعب تفاعلي – Interactive Playground</a></li>
+          <li><a href="reference.html#reference">جدول المرجع الشامل – Cheat Sheet</a></li>
+        </ol>
       </div>
-    </div>
 
-    <div class="code-wrap">
-      <div class="code-label">
-        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-        <span>HTML – جدول 3×3 أساسي</span>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
-<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+      <section class="section" id="basics">
+        <div class="section-header">
+          <div class="section-icon icon-cyan">🔲</div>
+          <div class="section-title-wrap">
+            <h2>١. البنية الأساسية للجدول</h2>
+            <p>العناصر الأربعة التي يقوم عليها كل جدول في HTML</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🧩 العناصر الأربعة الأساسية</h3>
+          <p>تُستخدم جداول HTML لعرض <strong>البيانات المجدولة</strong> (Tabular Data) باستخدام الصفوف والأعمدة. يعتمد
+            الهيكل على أربعة وسوم جوهرية:</p>
+          <br />
+          <ul>
+            <li><code>&lt;table&gt;</code> — الحاوية الرئيسية التي تضمّ كل شيء.</li>
+            <li><code>&lt;tr&gt;</code> (Table Row) — يُعرّف صفاً أفقياً واحداً.</li>
+            <li><code>&lt;td&gt;</code> (Table Data) — يُعرّف خلية بيانات عادية.</li>
+            <li><code>&lt;th&gt;</code> (Table Header) — خلية عنوان، تظهر بخط عريض ومتوسطة أفقياً تلقائياً.</li>
+          </ul>
+          <br />
+          <div class="alert alert-cyan">
+            <span class="alert-icon">💡</span>
+            <div><strong>لا يوجد وسم للعمود!</strong> الأعمدة تتشكّل تلقائياً بناءً على عدد خلايا
+              <code>&lt;td&gt;</code> أو <code>&lt;th&gt;</code> داخل كل صف <code>&lt;tr&gt;</code>. كلما أضفت خلايا في
+              كل صف، كلما زاد عدد الأعمدة.</div>
+          </div>
+        </div>
+
+        <div class="code-wrap">
+          <div class="code-label">
+            <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span>HTML – جدول 3×3 أساسي</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+          <pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
   <span class="cm">&lt;!-- الصف الأول – عناوين الأعمدة --&gt;</span>
   <span class="kw">&lt;tr&gt;</span>
     <span class="kw">&lt;th&gt;</span><span class="tx">الرقم</span><span class="kw">&lt;/th&gt;</span>
@@ -202,50 +207,66 @@
     <span class="kw">&lt;td&gt;</span><span class="tx">هندسة برمجيات</span><span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
-    </div>
+        </div>
 
-    <div class="demo-box">
-      <div class="demo-box-label">🔍 النتيجة المرئية</div>
-      <table border="1" cellpadding="8">
-        <tr><th>الرقم</th><th>الاسم</th><th>التخصص</th></tr>
-        <tr><td>1</td><td>أحمد</td><td>علوم حاسب</td></tr>
-        <tr><td>2</td><td>سارة</td><td>هندسة برمجيات</td></tr>
-      </table>
-    </div>
+        <div class="demo-box">
+          <div class="demo-box-label">🔍 النتيجة المرئية</div>
+          <table border="1" cellpadding="8">
+            <tr>
+              <th>الرقم</th>
+              <th>الاسم</th>
+              <th>التخصص</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>أحمد</td>
+              <td>علوم حاسب</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>سارة</td>
+              <td>هندسة برمجيات</td>
+            </tr>
+          </table>
+        </div>
 
-  </section>
-  <hr class="divider" />
+      </section>
+      <hr class="divider" />
 
-<section class="section" id="warnings">
-    <div class="section-header">
-      <div class="section-icon icon-red">⚠️</div>
-      <div class="section-title-wrap">
-        <h2>٢. تحذيرات وقيود هيكلية حرجة</h2>
-        <p>أخطاء شائعة تكسر الجدول وتضرّ بإمكانية الوصول</p>
-      </div>
-    </div>
+      <section class="section" id="warnings">
+        <div class="section-header">
+          <div class="section-icon icon-red">⚠️</div>
+          <div class="section-title-wrap">
+            <h2>٢. تحذيرات وقيود هيكلية حرجة</h2>
+            <p>أخطاء شائعة تكسر الجدول وتضرّ بإمكانية الوصول</p>
+          </div>
+        </div>
 
-    <div class="alert alert-red">
-      <span class="alert-icon">🚫</span>
-      <div>
-        <strong>لا تستخدم الجداول لتصميم تخطيط الصفحة!</strong>
-        استخدام &lt;table&gt; لوضع أعمدة أو شرائط جانبية أو تخطيطات الصفحة كان شائعاً في التسعينيات، لكنه اليوم <strong>ممنوع تماماً</strong>. يستخدم CSS Flexbox أو CSS Grid عوضاً عن ذلك. الجداول مخصصة حصراً لـ "البيانات المجدولة".
-      </div>
-    </div>
+        <div class="alert alert-red">
+          <span class="alert-icon">🚫</span>
+          <div>
+            <strong>لا تستخدم الجداول لتصميم تخطيط الصفحة!</strong>
+            استخدام &lt;table&gt; لوضع أعمدة أو شرائط جانبية أو تخطيطات الصفحة كان شائعاً في التسعينيات، لكنه اليوم
+            <strong>ممنوع تماماً</strong>. يستخدم CSS Flexbox أو CSS Grid عوضاً عن ذلك. الجداول مخصصة حصراً لـ "البيانات
+            المجدولة".
+          </div>
+        </div>
 
-    <div class="card">
-      <h3>📏 قاعدة تساوي عدد الخلايا (Critical Rule)</h3>
-      <p>
-        يجب أن يكون عدد الخلايا <code>&lt;td&gt;</code> أو <code>&lt;th&gt;</code> متساوياً في جميع الصفوف <code>&lt;tr&gt;</code>.
-        إذا كان الصف الأول يحتوي على 3 خلايا والثاني على خليتين فقط، سينكسر تخطيط الجدول وستظهر فجوات فارغة غير منتظمة.
-      </p>
-    </div>
+        <div class="card">
+          <h3>📏 قاعدة تساوي عدد الخلايا (Critical Rule)</h3>
+          <p>
+            يجب أن يكون عدد الخلايا <code>&lt;td&gt;</code> أو <code>&lt;th&gt;</code> متساوياً في جميع الصفوف
+            <code>&lt;tr&gt;</code>.
+            إذا كان الصف الأول يحتوي على 3 خلايا والثاني على خليتين فقط، سينكسر تخطيط الجدول وستظهر فجوات فارغة غير
+            منتظمة.
+          </p>
+        </div>
 
-    <div class="compare-grid">
-      <div class="compare-panel old-panel">
-        <h4>❌ خاطئ – خلايا غير متساوية</h4>
-        <div class="code-wrap" style="margin:0">
-<pre style="border-radius:6px; font-size:0.78rem"><span class="kw">&lt;table&gt;</span>
+        <div class="compare-grid">
+          <div class="compare-panel old-panel">
+            <h4>❌ خاطئ – خلايا غير متساوية</h4>
+            <div class="code-wrap" style="margin:0">
+              <pre style="border-radius:6px; font-size:0.78rem"><span class="kw">&lt;table&gt;</span>
   <span class="kw">&lt;tr&gt;</span>
     <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
@@ -254,12 +275,12 @@
     <span class="cm">&lt;!-- الخلية الثالثة مفقودة! --&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
-        </div>
-      </div>
-      <div class="compare-panel new-panel">
-        <h4>✅ صحيح – خلايا متساوية</h4>
-        <div class="code-wrap" style="margin:0">
-<pre style="border-radius:6px; font-size:0.78rem"><span class="kw">&lt;table&gt;</span>
+            </div>
+          </div>
+          <div class="compare-panel new-panel">
+            <h4>✅ صحيح – خلايا متساوية</h4>
+            <div class="code-wrap" style="margin:0">
+              <pre style="border-radius:6px; font-size:0.78rem"><span class="kw">&lt;table&gt;</span>
   <span class="kw">&lt;tr&gt;</span>
     <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
@@ -267,80 +288,99 @@
     <span class="kw">&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="demo-box">
-      <div class="demo-box-label">🔍 مقارنة مرئية – خاطئ مقابل صحيح</div>
-      <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:flex-start; justify-content:center;">
-        <div style="text-align:center;">
-          <p style="color:#f85149; font-size:0.82rem; margin-bottom:8px; font-weight:700;">❌ خلايا غير متساوية (مكسور)</p>
-          <table border="1" cellpadding="6" style="color:#1a1a2e;">
-            <tr><td>1</td><td>2</td><td>3</td></tr>
-            <tr><td>1</td><td>2</td></tr>
-          </table>
+        <div class="demo-box">
+          <div class="demo-box-label">🔍 مقارنة مرئية – خاطئ مقابل صحيح</div>
+          <div style="display:flex; gap:32px; flex-wrap:wrap; align-items:flex-start; justify-content:center;">
+            <div style="text-align:center;">
+              <p style="color:#f85149; font-size:0.82rem; margin-bottom:8px; font-weight:700;">❌ خلايا غير متساوية
+                (مكسور)</p>
+              <table border="1" cellpadding="6" style="color:#1a1a2e;">
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                </tr>
+              </table>
+            </div>
+            <div style="text-align:center;">
+              <p style="color:#3fb950; font-size:0.82rem; margin-bottom:8px; font-weight:700;">✅ خلايا متساوية (صحيح)
+              </p>
+              <table border="1" cellpadding="6" style="color:#1a1a2e;">
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
-        <div style="text-align:center;">
-          <p style="color:#3fb950; font-size:0.82rem; margin-bottom:8px; font-weight:700;">✅ خلايا متساوية (صحيح)</p>
-          <table border="1" cellpadding="6" style="color:#1a1a2e;">
-            <tr><td>1</td><td>2</td><td>3</td></tr>
-            <tr><td>1</td><td>2</td><td>3</td></tr>
-          </table>
+
+      </section>
+      <hr class="divider" />
+
+      <section class="section" id="spanning">
+        <div class="section-header">
+          <div class="section-icon icon-cyan">🔀</div>
+          <div class="section-title-wrap">
+            <h2>٣. دمج الخلايا – colspan &amp; rowspan</h2>
+            <p>كيفية توسيع خلية واحدة لتحتل مساحة عدة صفوف أو أعمدة</p>
+          </div>
         </div>
-      </div>
-    </div>
 
-  </section>
-  <hr class="divider" />
-
-<section class="section" id="spanning">
-    <div class="section-header">
-      <div class="section-icon icon-cyan">🔀</div>
-      <div class="section-title-wrap">
-        <h2>٣. دمج الخلايا – colspan &amp; rowspan</h2>
-        <p>كيفية توسيع خلية واحدة لتحتل مساحة عدة صفوف أو أعمدة</p>
-      </div>
-    </div>
-
-    <div class="two-col">
-      <div class="card">
-        <h3>↔️ colspan – الدمج الأفقي</h3>
-        <p>
-          <code>colspan="N"</code> يُمدّد الخلية أفقياً لتحتل مساحة <strong>N من الأعمدة</strong>.
-          يجب حذف (N−1) من الخلايا المجاورة في نفس الصف حتى لا يكسر الجدول.
-        </p>
-        <br/>
-        <p style="color:var(--amber); font-size:0.85rem;"><strong>مثال:</strong> خلية بـ colspan="2" تحتل مساحة عمودين → احذف خلية واحدة من نفس الصف.</p>
-      </div>
-      <div class="card">
-        <h3>↕️ rowspan – الدمج العمودي</h3>
-        <p>
-          <code>rowspan="N"</code> يُمدّد الخلية عمودياً للأسفل لتحتل مساحة <strong>N من الصفوف</strong>.
-          يجب حذف (N−1) خلايا من الصفوف التالية في نفس العمود.
-        </p>
-        <br/>
-        <p style="color:var(--amber); font-size:0.85rem;"><strong>قاعدة الحذف الجوهرية:</strong> خلية بـ rowspan="3" تقتحم مكان 2 خلية في الصفوف التالية → يجب حذفهما من الكود.</p>
-      </div>
-    </div>
-
-    <div class="alert alert-red">
-      <span class="alert-icon">⚡</span>
-      <div>
-        <strong>القاعدة الذهبية للـ rowspan:</strong>
-        عند استخدام rowspan، الخلية الممتدة تحجز مكانها ومكان الخلايا التي تحتها في الصفوف السفلية.
-        لذلك <strong>يجب عليك حذف</strong> تلك الخلايا من الكود وإلا اختلّ توازن الجدول كلياً.
-      </div>
-    </div>
-
-    <div class="two-col">
-      <div class="code-wrap">
-        <div class="code-label">
-          <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-          <span>colspan="2" – دمج عمودين</span>
+        <div class="two-col">
+          <div class="card">
+            <h3>↔️ colspan – الدمج الأفقي</h3>
+            <p>
+              <code>colspan="N"</code> يُمدّد الخلية أفقياً لتحتل مساحة <strong>N من الأعمدة</strong>.
+              يجب حذف (N−1) من الخلايا المجاورة في نفس الصف حتى لا يكسر الجدول.
+            </p>
+            <br />
+            <p style="color:var(--amber); font-size:0.85rem;"><strong>مثال:</strong> خلية بـ colspan="2" تحتل مساحة
+              عمودين → احذف خلية واحدة من نفس الصف.</p>
+          </div>
+          <div class="card">
+            <h3>↕️ rowspan – الدمج العمودي</h3>
+            <p>
+              <code>rowspan="N"</code> يُمدّد الخلية عمودياً للأسفل لتحتل مساحة <strong>N من الصفوف</strong>.
+              يجب حذف (N−1) خلايا من الصفوف التالية في نفس العمود.
+            </p>
+            <br />
+            <p style="color:var(--amber); font-size:0.85rem;"><strong>قاعدة الحذف الجوهرية:</strong> خلية بـ rowspan="3"
+              تقتحم مكان 2 خلية في الصفوف التالية → يجب حذفهما من الكود.</p>
+          </div>
         </div>
-        <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
-<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+
+        <div class="alert alert-red">
+          <span class="alert-icon">⚡</span>
+          <div>
+            <strong>القاعدة الذهبية للـ rowspan:</strong>
+            عند استخدام rowspan، الخلية الممتدة تحجز مكانها ومكان الخلايا التي تحتها في الصفوف السفلية.
+            لذلك <strong>يجب عليك حذف</strong> تلك الخلايا من الكود وإلا اختلّ توازن الجدول كلياً.
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="code-wrap">
+            <div class="code-label">
+              <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+              <span>colspan="2" – دمج عمودين</span>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+            <pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
   <span class="kw">&lt;tr&gt;</span>
     <span class="cm">&lt;!-- هذه الخلية تحتل مكان عمودين --&gt;</span>
     <span class="kw">&lt;td</span> <span class="at">colspan</span>=<span class="vl">"2"</span><span class="kw">&gt;</span><span class="tx">خلية مدمجة</span><span class="kw">&lt;/td&gt;</span>
@@ -353,14 +393,14 @@
     <span class="kw">&lt;td&gt;</span><span class="tx">ج</span><span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
-      </div>
-      <div class="code-wrap">
-        <div class="code-label">
-          <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-          <span>rowspan="2" – دمج صفين</span>
-        </div>
-        <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
-<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+          </div>
+          <div class="code-wrap">
+            <div class="code-label">
+              <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+              <span>rowspan="2" – دمج صفين</span>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+            <pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
   <span class="kw">&lt;tr&gt;</span>
     <span class="cm">&lt;!-- تمتد هذه الخلية على صفين --&gt;</span>
     <span class="kw">&lt;td</span> <span class="at">rowspan</span>=<span class="vl">"2"</span><span class="kw">&gt;</span><span class="tx">خلية طويلة</span><span class="kw">&lt;/td&gt;</span>
@@ -371,36 +411,36 @@
     <span class="kw">&lt;td&gt;</span><span class="tx">الصف 2</span><span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
-      </div>
-    </div>
+          </div>
+        </div>
 
-    <div class="demo-box">
-      <div class="demo-box-label">🔍 مثال متقدم – دمج مزدوج (rowspan + colspan معاً)</div>
-      <table border="1" cellpadding="10" style="text-align:center; color:#1a1a2e; width:100%;">
-        <tr>
-          <td rowspan="2" colspan="2" style="background:#dde8f5; font-weight:700;">
-            خلية عملاقة<br/><small style="font-weight:400;">(rowspan=2 + colspan=2)</small>
-          </td>
-          <td>أعلى اليمين</td>
-        </tr>
-        <tr>
-          <td>وسط اليمين</td>
-        </tr>
-        <tr>
-          <td>أسفل يسار</td>
-          <td>أسفل وسط</td>
-          <td>أسفل يمين</td>
-        </tr>
-      </table>
-    </div>
+        <div class="demo-box">
+          <div class="demo-box-label">🔍 مثال متقدم – دمج مزدوج (rowspan + colspan معاً)</div>
+          <table border="1" cellpadding="10" style="text-align:center; color:#1a1a2e; width:100%;">
+            <tr>
+              <td rowspan="2" colspan="2" style="background:#dde8f5; font-weight:700;">
+                خلية عملاقة<br /><small style="font-weight:400;">(rowspan=2 + colspan=2)</small>
+              </td>
+              <td>أعلى اليمين</td>
+            </tr>
+            <tr>
+              <td>وسط اليمين</td>
+            </tr>
+            <tr>
+              <td>أسفل يسار</td>
+              <td>أسفل وسط</td>
+              <td>أسفل يمين</td>
+            </tr>
+          </table>
+        </div>
 
-    <div class="code-wrap">
-      <div class="code-label">
-        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-        <span>كود الدمج المزدوج أعلاه</span>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
-<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+        <div class="code-wrap">
+          <div class="code-label">
+            <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span>كود الدمج المزدوج أعلاه</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+          <pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
   <span class="cm">&lt;!-- الصف الأول --&gt;</span>
   <span class="kw">&lt;tr&gt;</span>
     <span class="cm">&lt;!-- تمتد على صفين وعمودين في آنٍ واحد --&gt;</span>
@@ -422,41 +462,46 @@
     <span class="kw">&lt;td&gt;</span><span class="tx">أسفل يمين</span><span class="kw">&lt;/td&gt;</span>
   <span class="kw">&lt;/tr&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
-    </div>
+        </div>
 
-  </section>
-  <hr class="divider" />
+      </section>
+      <hr class="divider" />
 
-<section class="section" id="semantic">
-    <div class="section-header">
-      <div class="section-icon icon-purple">🗂️</div>
-      <div class="section-title-wrap">
-        <h2>٤. أقسام الجدول الهيكلية (Semantic)</h2>
-        <p>thead, tbody, tfoot, caption – لجداول دلالية وسهلة الاستهداف بـ CSS</p>
-      </div>
-    </div>
+      <section class="section" id="semantic">
+        <div class="section-header">
+          <div class="section-icon icon-purple">🗂️</div>
+          <div class="section-title-wrap">
+            <h2>٤. أقسام الجدول الهيكلية (Semantic)</h2>
+            <p>thead, tbody, tfoot, caption – لجداول دلالية وسهلة الاستهداف بـ CSS</p>
+          </div>
+        </div>
 
-    <div class="card">
-      <h3>🏗️ الأقسام الثلاثة الرئيسية</h3>
-      <ul>
-        <li><code>&lt;thead&gt;</code> — رأس الجدول. يحتوي عادةً على صف أو أكثر من عناوين الأعمدة <code>&lt;th&gt;</code>. يُستخدم لتطبيق تنسيق خاص (مثل لون خلفية مختلف)، ولتثبيت رأس الجدول عند التمرير <code>position: sticky</code>.</li>
-        <li><code>&lt;tbody&gt;</code> — جسم الجدول. يحتوي على البيانات الأساسية. يمكن استخدام أكثر من <code>&lt;tbody&gt;</code> في جدول واحد لتقسيم البيانات إلى مجموعات.</li>
-        <li><code>&lt;tfoot&gt;</code> — تذييل الجدول. مخصص للمجاميع والملخصات. في HTML5، يُكتب بعد <code>&lt;tbody&gt;</code> ويظهر دائماً في الأسفل.</li>
-      </ul>
-      <br/>
-      <div class="alert alert-cyan" style="margin:0">
-        <span class="alert-icon">ℹ️</span>
-        <div>هذه الأقسام <strong>اختيارية</strong> تقنياً، لكنها موصى بها لكل جدول لأنها تُحسّن قابلية التنسيق، تُسهّل قراءة الكود، وتُعزّز إمكانية الوصول لمستخدمي قارئات الشاشة.</div>
-      </div>
-    </div>
+        <div class="card">
+          <h3>🏗️ الأقسام الثلاثة الرئيسية</h3>
+          <ul>
+            <li><code>&lt;thead&gt;</code> — رأس الجدول. يحتوي عادةً على صف أو أكثر من عناوين الأعمدة
+              <code>&lt;th&gt;</code>. يُستخدم لتطبيق تنسيق خاص (مثل لون خلفية مختلف)، ولتثبيت رأس الجدول عند التمرير
+              <code>position: sticky</code>.</li>
+            <li><code>&lt;tbody&gt;</code> — جسم الجدول. يحتوي على البيانات الأساسية. يمكن استخدام أكثر من
+              <code>&lt;tbody&gt;</code> في جدول واحد لتقسيم البيانات إلى مجموعات.</li>
+            <li><code>&lt;tfoot&gt;</code> — تذييل الجدول. مخصص للمجاميع والملخصات. في HTML5، يُكتب بعد
+              <code>&lt;tbody&gt;</code> ويظهر دائماً في الأسفل.</li>
+          </ul>
+          <br />
+          <div class="alert alert-cyan" style="margin:0">
+            <span class="alert-icon">ℹ️</span>
+            <div>هذه الأقسام <strong>اختيارية</strong> تقنياً، لكنها موصى بها لكل جدول لأنها تُحسّن قابلية التنسيق،
+              تُسهّل قراءة الكود، وتُعزّز إمكانية الوصول لمستخدمي قارئات الشاشة.</div>
+          </div>
+        </div>
 
-    <div class="code-wrap">
-      <div class="code-label">
-        <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
-        <span>HTML – جدول مبيعات شهرية مهيكل بالكامل</span>
-      </div>
-      <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
-<pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
+        <div class="code-wrap">
+          <div class="code-label">
+            <div class="dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+            <span>HTML – جدول مبيعات شهرية مهيكل بالكامل</span>
+          </div>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+          <pre><span class="kw">&lt;table</span> <span class="at">border</span>=<span class="vl">"1"</span><span class="kw">&gt;</span>
   <span class="cm">&lt;!-- عنوان الجدول للإمكانية الوصول --&gt;</span>
   <span class="kw">&lt;caption&gt;</span><span class="tx">مبيعات الربع الأول 2025</span><span class="kw">&lt;/caption&gt;</span>
 
@@ -494,50 +539,69 @@
     <span class="kw">&lt;/tr&gt;</span>
   <span class="kw">&lt;/tfoot&gt;</span>
 <span class="kw">&lt;/table&gt;</span></pre>
-    </div>
+        </div>
 
-    <div class="demo-box">
-      <div class="demo-box-label">🔍 النتيجة المرئية</div>
-      <table border="1" cellpadding="9" style="width:100%; max-width:440px; color:#1a1a2e;">
-        <caption style="font-weight:700; margin-bottom:8px; color:#1a1a2e;">مبيعات الربع الأول 2025</caption>
-        <thead style="background:#c9dff5;">
-          <tr><th scope="col">الشهر</th><th scope="col">المبيعات</th><th scope="col">الأرباح</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">يناير</th><td>5,000 ج</td><td>1,200 ج</td></tr>
-          <tr><th scope="row">فبراير</th><td>6,200 ج</td><td>1,800 ج</td></tr>
-          <tr><th scope="row">مارس</th><td>4,800 ج</td><td>900 ج</td></tr>
-        </tbody>
-        <tfoot style="background:#e8f0e8; font-weight:700;">
-          <tr><th scope="row">الإجمالي</th><td>16,000 ج</td><td>3,900 ج</td></tr>
-        </tfoot>
-      </table>
-    </div>
+        <div class="demo-box">
+          <div class="demo-box-label">🔍 النتيجة المرئية</div>
+          <table border="1" cellpadding="9" style="width:100%; max-width:440px; color:#1a1a2e;">
+            <caption style="font-weight:700; margin-bottom:8px; color:#1a1a2e;">مبيعات الربع الأول 2025</caption>
+            <thead style="background:#c9dff5;">
+              <tr>
+                <th scope="col">الشهر</th>
+                <th scope="col">المبيعات</th>
+                <th scope="col">الأرباح</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">يناير</th>
+                <td>5,000 ج</td>
+                <td>1,200 ج</td>
+              </tr>
+              <tr>
+                <th scope="row">فبراير</th>
+                <td>6,200 ج</td>
+                <td>1,800 ج</td>
+              </tr>
+              <tr>
+                <th scope="row">مارس</th>
+                <td>4,800 ج</td>
+                <td>900 ج</td>
+              </tr>
+            </tbody>
+            <tfoot style="background:#e8f0e8; font-weight:700;">
+              <tr>
+                <th scope="row">الإجمالي</th>
+                <td>16,000 ج</td>
+                <td>3,900 ج</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
 
-  </section>
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>
-      📋 المرجع الشامل لجداول HTML •
-      ١٥ قسماً تعليمياً + جدول مرجع شامل •
-      مبني بالكامل بـ HTML5 + CSS3 + JavaScript
-    </p>
-    <p style="margin-top:6px; color:var(--text-dim);">
-      استناداً إلى: <em>e.md</em> &nbsp;•&nbsp; <em>my.md</em> &nbsp;•&nbsp; <em>tables.html</em>
-      &nbsp;•&nbsp; جميع المصطلحات التقنية محتفظ بها بالإنجليزية للمرجعية الصحيحة.
-    </p>
-    <p style="margin-top:6px; color:var(--text-dim); font-size:0.75rem;">
-      يشمل: الأساسيات • دمج الخلايا • الأقسام الدلالية • المحاذاة • المسافات • colgroup • Modern UI • Nested Tables • Accessibility • Legacy vs Modern • التاريخ • Responsive Tables • Interactive Playground • Cheat Sheet
-    </p>
-  </footer>
+      </section>
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <p>
+          📋 المرجع الشامل لجداول HTML •
+          ١٥ قسماً تعليمياً + جدول مرجع شامل •
+          مبني بالكامل بـ HTML5 + CSS3 + JavaScript
+        </p>
+        <p style="margin-top:6px; color:var(--text-dim);">
+          استناداً إلى: <em>e.md</em> &nbsp;•&nbsp; <em>my.md</em> &nbsp;•&nbsp; <em>tables.html</em>
+          &nbsp;•&nbsp; جميع المصطلحات التقنية محتفظ بها بالإنجليزية للمرجعية الصحيحة.
+        </p>
+        <p style="margin-top:6px; color:var(--text-dim); font-size:0.75rem;">
+          يشمل: الأساسيات • دمج الخلايا • الأقسام الدلالية • المحاذاة • المسافات • colgroup • Modern UI • Nested Tables
+          • Accessibility • Legacy vs Modern • التاريخ • Responsive Tables • Interactive Playground • Cheat Sheet
+        </p>
+      </footer>
 
-</main>
-</div><!-- .page-wrap -->
+    </main>
+  </div><!-- .page-wrap -->
 
-<!-- BACK TO TOP BUTTON -->
-<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-  aria-label="العودة للأعلى"
-  style="
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" style="
     position:fixed; bottom:28px; left:28px; z-index:999;
     width:44px; height:44px; border-radius:50%;
     background:var(--cyan); border:none; cursor:pointer;
@@ -546,7 +610,8 @@
     transition:transform .2s;
   ">↑</button>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
